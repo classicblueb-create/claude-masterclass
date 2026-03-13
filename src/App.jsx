@@ -1256,7 +1256,7 @@ export default function App() {
           <div style={{ textAlign: "center", maxWidth: 800, margin: "0 auto" }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "6px 16px", borderRadius: 30, fontSize: 13, fontWeight: 700, border: "1px solid rgba(124,58,237,0.2)", background: "rgba(124,58,237,0.05)", color: "var(--primary)", marginBottom: 24 }}>
               <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--primary)", display: "inline-block" }} />
-              อัปเดตล่าสุด: เนื้อหาสำหรับ Claude 3.5 & Cowork
+              อัปเดตล่าสุด: เนื้อหาสำหรับ Claude 4.6 & Cowork
             </div>
             
             <h1 className="hero-title" style={{ marginBottom: 24 }}>
