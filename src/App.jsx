@@ -1585,14 +1585,85 @@ Examples: newsletter_v1.md / client-brief_v2.docx
           </div>
           <div className="grid-auto-fit">
             <Card color="#a78bfa" className="hover-lift">
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+                <span style={{ fontSize: 14, fontWeight: 800, color: "#64748B" }}>Official</span>
+                <span style={{ fontSize: 14, fontWeight: 800, color: "#DC2626" }}>Must Read</span>
+              </div>
               <h3 style={{ fontSize: 16, fontWeight: 800, color: "#8B5CF6", marginBottom: 12 }}>📖 Official Anthropic Guides</h3>
-              <p style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.7, marginBottom: 16 }}>อ่านคู่มือการใช้งาน Prompt, Skills และ API ตรงจากผู้สร้าง Claude</p>
-              <a href="https://docs.anthropic.com" target="_blank" rel="noopener noreferrer" style={{ color: "#8B5CF6", fontWeight: 700, textDecoration: "none" }}>docs.anthropic.com →</a>
+              <p style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.7, marginBottom: 16 }}>อ่านคู่มือการใช้งาน Prompt, Skills และ API แบบละเอียดยิบส่งตรงจากผู้สร้าง Claude</p>
+              <a href="https://docs.anthropic.com" target="_blank" rel="noopener noreferrer" style={{ color: "#8B5CF6", fontWeight: 700, textDecoration: "none" }}>ดูข้อมูลเพิ่มเติม →</a>
+            </Card>
+            <Card color="#60a5fa" className="hover-lift">
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+                <span style={{ fontSize: 14, fontWeight: 800, color: "#64748B" }}>Courses</span>
+                <span style={{ fontSize: 14, fontWeight: 800, color: "#10B981" }}>เรียนฟรี</span>
+              </div>
+              <h3 style={{ fontSize: 16, fontWeight: 800, color: "#60A5FA", marginBottom: 12 }}>🎓 Anthropic Learn Courses</h3>
+              <p style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.7, marginBottom: 16 }}>คอร์สเรียนฟรีจาก Anthropic ตั้งแต่ Prompt Engineering ไปจนถึงการใช้ API ในโปรดักชัน</p>
+              <a href="https://www.anthropic.com/learn" target="_blank" rel="noopener noreferrer" style={{ color: "#60A5FA", fontWeight: 700, textDecoration: "none" }}>ดูข้อมูลเพิ่มเติม →</a>
+            </Card>
+            <Card color="#34d399" className="hover-lift">
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+                <span style={{ fontSize: 14, fontWeight: 800, color: "#64748B" }}>Official</span>
+                <span style={{ fontSize: 14, fontWeight: 800, color: "#059669" }}>พร้อมใช้</span>
+              </div>
+              <h3 style={{ fontSize: 16, fontWeight: 800, color: "#34D399", marginBottom: 12 }}>📚 Claude Prompt Library</h3>
+              <p style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.7, marginBottom: 16 }}>คลัง Prompt เกรดพรีเมียมจากทีม Anthropic คัดมาให้แล้วสำหรับทุกสายอาชีพ นำไปใช้ต่อได้เลย</p>
+              <a href="https://docs.anthropic.com/claude/prompt-library" target="_blank" rel="noopener noreferrer" style={{ color: "#34D399", fontWeight: 700, textDecoration: "none" }}>ดูข้อมูลเพิ่มเติม →</a>
             </Card>
             <Card color="#f59e0b" className="hover-lift">
-              <h3 style={{ fontSize: 16, fontWeight: 800, color: "#F59E0B", marginBottom: 12 }}>⭐ GitHub Repos</h3>
-              <p style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.7, marginBottom: 16 }}>รวม Prompts เด็ด และ Skills พร้อมใช้จาก Community (awesome-claude-code)</p>
-              <a href="https://github.com/hesreallyhim/awesome-claude-code" target="_blank" rel="noopener noreferrer" style={{ color: "#F59E0B", fontWeight: 700, textDecoration: "none" }}>ดู Repository →</a>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+                <span style={{ fontSize: 14, fontWeight: 800, color: "#64748B" }}>GitHub</span>
+                <span style={{ fontSize: 14, fontWeight: 800, color: "#EA580C" }}>🌟 7k+</span>
+              </div>
+              <h3 style={{ fontSize: 16, fontWeight: 800, color: "#F59E0B", marginBottom: 12 }}>🍳 Anthropic Cookbook</h3>
+              <p style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.7, marginBottom: 16 }}>Official recipes และโค้ดตัวอย่างขั้นสูงบน GitHub สำหรับการดึงพลังสูงสุดของ Claude ไปสร้างแอปจริง</p>
+              <a href="https://github.com/anthropics/anthropic-cookbook" target="_blank" rel="noopener noreferrer" style={{ color: "#F59E0B", fontWeight: 700, textDecoration: "none" }}>ดูข้อมูลเพิ่มเติม →</a>
+            </Card>
+            <Card color="#ec4899" className="hover-lift">
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+                <span style={{ fontSize: 14, fontWeight: 800, color: "#64748B" }}>Core Tech</span>
+                <span style={{ fontSize: 14, fontWeight: 800, color: "#BE185D" }}>🌟 4k+</span>
+              </div>
+              <h3 style={{ fontSize: 16, fontWeight: 800, color: "#EC4899", marginBottom: 12 }}>🔌 Model Context Protocol</h3>
+              <p style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.7, marginBottom: 16 }}>มาตรฐานใหม่ (MCP) สำหรับสร้าง Connectors ให้ Claude เข้าถึงข้อมูลในเครื่องและ Cloud (Repo หลัก)</p>
+              <a href="https://github.com/modelcontextprotocol/specification" target="_blank" rel="noopener noreferrer" style={{ color: "#EC4899", fontWeight: 700, textDecoration: "none" }}>ดูข้อมูลเพิ่มเติม →</a>
+            </Card>
+            <Card color="#8b5cf6" className="hover-lift">
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+                <span style={{ fontSize: 14, fontWeight: 800, color: "#64748B" }}>Community</span>
+                <span style={{ fontSize: 14, fontWeight: 800, color: "#7C3AED" }}>🌟 3.5k+</span>
+              </div>
+              <h3 style={{ fontSize: 16, fontWeight: 800, color: "#8B5CF6", marginBottom: 12 }}>🌐 awesome-mcp-servers</h3>
+              <p style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.7, marginBottom: 16 }}>รวม MCP Servers (Connectors) พร้อมใช้กว่า 100+ ตัวสำหรับเชื่อมต่อ Database, Tools, และ APIs ภายนอก</p>
+              <a href="https://github.com/modelcontextprotocol/awesome-mcp-servers" target="_blank" rel="noopener noreferrer" style={{ color: "#8B5CF6", fontWeight: 700, textDecoration: "none" }}>ดูข้อมูลเพิ่มเติม →</a>
+            </Card>
+            <Card color="#06b6d4" className="hover-lift">
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+                <span style={{ fontSize: 14, fontWeight: 800, color: "#64748B" }}>Community</span>
+                <span style={{ fontSize: 14, fontWeight: 800, color: "#0891B2" }}>🌟 13k+</span>
+              </div>
+              <h3 style={{ fontSize: 16, fontWeight: 800, color: "#06B6D4", marginBottom: 12 }}>💻 awesome-claude-code</h3>
+              <p style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.7, marginBottom: 16 }}>รวม Prompts เด็ด และ Skills พร้อมใช้สำหรับ Claude Desktop/Code อัปเดตสม่ำเสมอจากคอมมูนิตี้</p>
+              <a href="https://github.com/hesreallyhim/awesome-claude-code" target="_blank" rel="noopener noreferrer" style={{ color: "#06B6D4", fontWeight: 700, textDecoration: "none" }}>ดูข้อมูลเพิ่มเติม →</a>
+            </Card>
+            <Card color="#10b981" className="hover-lift">
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+                <span style={{ fontSize: 14, fontWeight: 800, color: "#64748B" }}>Official</span>
+                <span style={{ fontSize: 14, fontWeight: 800, color: "#047857" }}>Code</span>
+              </div>
+              <h3 style={{ fontSize: 16, fontWeight: 800, color: "#10B981", marginBottom: 12 }}>💻 Claude Code Docs</h3>
+              <p style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.7, marginBottom: 16 }}>คู่มือการใช้งาน Claude Code แบบละเอียดสำหรับนักพัฒนา</p>
+              <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener noreferrer" style={{ color: "#10B981", fontWeight: 700, textDecoration: "none" }}>ดูข้อมูลเพิ่มเติม →</a>
+            </Card>
+            <Card color="#f97316" className="hover-lift">
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+                <span style={{ fontSize: 14, fontWeight: 800, color: "#64748B" }}>GitHub</span>
+                <span style={{ fontSize: 14, fontWeight: 800, color: "#EA580C" }}>Official</span>
+              </div>
+              <h3 style={{ fontSize: 16, fontWeight: 800, color: "#F97316", marginBottom: 12 }}>🔌 Knowledge Work Plugins</h3>
+              <p style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.7, marginBottom: 16 }}>Plugins สำเร็จรูปจาก Anthropic สำหรับงาน Knowledge Work</p>
+              <a href="https://github.com/anthropics/knowledge-work-plugins" target="_blank" rel="noopener noreferrer" style={{ color: "#F97316", fontWeight: 700, textDecoration: "none" }}>ดูข้อมูลเพิ่มเติม →</a>
             </Card>
           </div>
         </section>
