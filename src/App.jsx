@@ -14,8 +14,7 @@ const navSections = [
   { id: "folder-setup", label: "โครงสร้างโฟลเดอร์", icon: "📁" },
   { id: "connectors", label: "Connectors Guide", icon: "🔌" },
   { id: "cowork-mastery", label: "Cowork Mastery", icon: "🎯" },
-  { id: "use-cases", label: "Use Cases จริง", icon: "💼" },
-  { id: "income", label: "สร้างรายได้ด้วย AI", icon: "💰" },
+  { id: "use-cases", label: "Use Cases & รายได้", icon: "💼" },
   { id: "workflows", label: "Workflows จริง", icon: "🚀" },
   { id: "power-tips", label: "Power Tips", icon: "⚡" },
   { id: "claude-tutor", label: "Claude as Tutor", icon: "🎓" },
@@ -168,20 +167,20 @@ function PromptBox({ children, color = "#7c3aed" }) {
   };
   return (
     <div className="prompt-box" style={{ position: "relative", margin: "16px 0" }}>
-      <pre style={{
-        background: "#F8FAFC",
-        border: `1px solid ${color}20`,
-        borderRadius: 14,
-        padding: "20px",
+      <pre style={{ 
+        background: "#F8FAFC", 
+        border: `1px solid ${color}20`, 
+        borderRadius: 14, 
+        padding: "20px", 
         paddingTop: "40px",
-        fontFamily: "'Space Grotesk', monospace",
-        fontSize: 13,
-        lineHeight: 1.7,
-        color: "#334155",
-        whiteSpace: "pre-wrap",
-        wordBreak: "break-word",
-        overflowX: "auto",
-        maxHeight: 400,
+        fontFamily: "'Space Grotesk', monospace", 
+        fontSize: 13, 
+        lineHeight: 1.7, 
+        color: "#334155", 
+        whiteSpace: "pre-wrap", 
+        wordBreak: "break-word", 
+        overflowX: "auto", 
+        maxHeight: 400, 
         overflowY: "auto",
         borderLeft: `4px solid ${color}`,
         WebkitOverflowScrolling: "touch",
@@ -189,11 +188,11 @@ function PromptBox({ children, color = "#7c3aed" }) {
       }}>
         {children}
       </pre>
-      <button onClick={copy} className="glass-btn" style={{
-        position: "absolute", top: 8, right: 8,
-        background: copied ? "#10B981" : "rgba(255,255,255,0.9)",
-        border: `1px solid ${copied ? "#10B981" : color + "30"}`,
-        borderRadius: 8, padding: "4px 12px",
+      <button onClick={copy} className="glass-btn" style={{ 
+        position: "absolute", top: 8, right: 8, 
+        background: copied ? "#10B981" : "rgba(255,255,255,0.9)", 
+        border: `1px solid ${copied ? "#10B981" : color + "30"}`, 
+        borderRadius: 8, padding: "4px 12px", 
         color: copied ? "white" : color, fontSize: 11, cursor: "pointer", fontWeight: 600,
         display: "flex", alignItems: "center", gap: 4,
         transition: "all 0.2s ease"
@@ -206,12 +205,12 @@ function PromptBox({ children, color = "#7c3aed" }) {
 
 function Card({ children, color, style = {}, className = "" }) {
   return (
-    <div className={`premium-card ${className}`} style={{
-      background: "white",
-      border: `1px solid ${color ? color + "25" : "rgba(226,232,240,0.8)"}`,
-      borderRadius: 16,
-      padding: "24px",
-      ...style
+    <div className={`premium-card ${className}`} style={{ 
+      background: "white", 
+      border: `1px solid ${color ? color + "25" : "rgba(226,232,240,0.8)"}`, 
+      borderRadius: 16, 
+      padding: "24px", 
+      ...style 
     }}>
       {children}
     </div>
@@ -220,9 +219,9 @@ function Card({ children, color, style = {}, className = "" }) {
 
 function Tag({ color, children }) {
   return (
-    <span style={{
-      display: "inline-flex", alignItems: "center", gap: 6,
-      padding: "6px 14px", borderRadius: 24, fontSize: 12, fontWeight: 700,
+    <span style={{ 
+      display: "inline-flex", alignItems: "center", gap: 6, 
+      padding: "6px 14px", borderRadius: 24, fontSize: 12, fontWeight: 700, 
       border: `1px solid ${color}35`, background: `${color}12`, color,
       marginBottom: 12
     }}>
@@ -232,7 +231,6 @@ function Tag({ color, children }) {
 }
 
 // ─── SVG ILLUSTRATIONS (Unchanged Logic, Adjusted width for mobile) ───────────
-// Keeping the SVGs identical internally, but they will scale via CSS wrappers
 function SvgHero() { return SvgHeroLogic(); }
 function SvgCowork() { return SvgCoworkLogic(); }
 function SvgUseCases() { return SvgUseCasesLogic(); }
@@ -240,223 +238,226 @@ function SvgIncome() { return SvgIncomeLogic(); }
 function SvgTutor() { return SvgTutorLogic(); }
 function SvgResources() { return SvgResourcesLogic(); }
 
-// SVG Logic implementations (Copied from original to keep it self-contained)
 function SvgHeroLogic() {
-  const nodes = [[80, 60], [130, 110], [75, 155], [40, 108], [115, 58], [155, 155]];
-  const nodesR = [[690, 60], [640, 110], [695, 155], [732, 105], [670, 55], [657, 160]];
-  const lines = [[0, 1], [1, 2], [1, 3], [1, 4], [1, 5], [0, 3], [2, 3]];
-  const colors = ["#a78bfa", "#7c3aed", "#60a5fa", "#a78bfa", "#c4b5fd", "#60a5fa"];
-  const colorsR = ["#60a5fa", "#2563eb", "#38bdf8", "#60a5fa", "#93c5fd", "#38bdf8"];
-  const orbitColors = ["#a78bfa", "#60a5fa", "#34d399", "#f59e0b", "#ec4899", "#38bdf8"];
+  const nodes = [[80,60],[130,110],[75,155],[40,108],[115,58],[155,155]];
+  const nodesR = [[690,60],[640,110],[695,155],[732,105],[670,55],[657,160]];
+  const lines = [[0,1],[1,2],[1,3],[1,4],[1,5],[0,3],[2,3]];
+  const colors = ["#a78bfa","#7c3aed","#60a5fa","#a78bfa","#c4b5fd","#60a5fa"];
+  const colorsR = ["#60a5fa","#2563eb","#38bdf8","#60a5fa","#93c5fd","#38bdf8"];
+  const orbitColors = ["#a78bfa","#60a5fa","#34d399","#f59e0b","#ec4899","#38bdf8"];
   return (
-    <svg width="100%" height="100%" viewBox="0 0 820 220" preserveAspectRatio="xMidYMid slice" style={{ minHeight: 220 }}>
+    <svg width="100%" height="100%" viewBox="0 0 820 220" preserveAspectRatio="xMidYMid slice" style={{minHeight: 220}}>
       <defs>
-        <radialGradient id="hg1" cx="30%" cy="50%"><stop offset="0%" stopColor="#7c3aed" stopOpacity="0.5" /><stop offset="100%" stopColor="#7c3aed" stopOpacity="0" /></radialGradient>
-        <radialGradient id="hg2" cx="70%" cy="50%"><stop offset="0%" stopColor="#2563eb" stopOpacity="0.4" /><stop offset="100%" stopColor="#2563eb" stopOpacity="0" /></radialGradient>
-        <radialGradient id="hg3" cx="50%" cy="50%"><stop offset="0%" stopColor="#34d399" stopOpacity="0.18" /><stop offset="100%" stopColor="#34d399" stopOpacity="0" /></radialGradient>
-        <filter id="svgGlow"><feGaussianBlur stdDeviation="2.5" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
+        <radialGradient id="hg1" cx="30%" cy="50%"><stop offset="0%" stopColor="#7c3aed" stopOpacity="0.5"/><stop offset="100%" stopColor="#7c3aed" stopOpacity="0"/></radialGradient>
+        <radialGradient id="hg2" cx="70%" cy="50%"><stop offset="0%" stopColor="#2563eb" stopOpacity="0.4"/><stop offset="100%" stopColor="#2563eb" stopOpacity="0"/></radialGradient>
+        <radialGradient id="hg3" cx="50%" cy="50%"><stop offset="0%" stopColor="#34d399" stopOpacity="0.18"/><stop offset="100%" stopColor="#34d399" stopOpacity="0"/></radialGradient>
+        <filter id="svgGlow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
       </defs>
-      <ellipse cx="250" cy="110" rx="300" ry="180" fill="url(#hg1)" />
-      <ellipse cx="580" cy="110" rx="280" ry="160" fill="url(#hg2)" />
-      <ellipse cx="410" cy="110" rx="200" ry="130" fill="url(#hg3)" />
-      {lines.map(([a, b], i) => <line key={`l1-${i}`} x1={nodes[a][0]} y1={nodes[a][1]} x2={nodes[b][0]} y2={nodes[b][1]} stroke="#7c3aed" strokeWidth={i < 5 ? 1.5 : 1} opacity={i < 5 ? 0.5 : 0.3} />)}
-      {nodes.map(([x, y], i) => <circle key={`n1-${i}`} cx={x} cy={y} r={i === 1 ? 10 : 6} fill={colors[i]} opacity="0.95" filter="url(#svgGlow)" />)}
-      <line x1="378" y1="110" x2="165" y2="110" stroke="#a78bfa" strokeWidth="1" opacity="0.2" strokeDasharray="3 5" />
-      <line x1="442" y1="110" x2="630" y2="110" stroke="#60a5fa" strokeWidth="1" opacity="0.2" strokeDasharray="3 5" />
-      <circle cx="410" cy="110" r="44" fill="none" stroke="#7c3aed" strokeWidth="1" strokeDasharray="4 3" opacity="0.35" />
-      <circle cx="410" cy="110" r="33" fill="rgba(124,58,237,0.14)" stroke="#a78bfa" strokeWidth="1.5" opacity="0.75" />
-      <circle cx="410" cy="110" r="19" fill="rgba(167,139,250,0.28)" filter="url(#svgGlow)" />
+      <ellipse cx="250" cy="110" rx="300" ry="180" fill="url(#hg1)"/>
+      <ellipse cx="580" cy="110" rx="280" ry="160" fill="url(#hg2)"/>
+      <ellipse cx="410" cy="110" rx="200" ry="130" fill="url(#hg3)"/>
+      {lines.map(([a,b],i) => <line key={`l1-${i}`} x1={nodes[a][0]} y1={nodes[a][1]} x2={nodes[b][0]} y2={nodes[b][1]} stroke="#7c3aed" strokeWidth={i<5?1.5:1} opacity={i<5?0.5:0.3}/>)}
+      {nodes.map(([x,y],i) => <circle key={`n1-${i}`} cx={x} cy={y} r={i===1?10:6} fill={colors[i]} opacity="0.95" filter="url(#svgGlow)"/>)}
+      <line x1="378" y1="110" x2="165" y2="110" stroke="#a78bfa" strokeWidth="1" opacity="0.2" strokeDasharray="3 5"/>
+      <line x1="442" y1="110" x2="630" y2="110" stroke="#60a5fa" strokeWidth="1" opacity="0.2" strokeDasharray="3 5"/>
+      <circle cx="410" cy="110" r="44" fill="none" stroke="#7c3aed" strokeWidth="1" strokeDasharray="4 3" opacity="0.35"/>
+      <circle cx="410" cy="110" r="33" fill="rgba(124,58,237,0.14)" stroke="#a78bfa" strokeWidth="1.5" opacity="0.75"/>
+      <circle cx="410" cy="110" r="19" fill="rgba(167,139,250,0.28)" filter="url(#svgGlow)"/>
       <text x="410" y="107" textAnchor="middle" fontSize="11" fill="#e9e4ff" fontWeight="700" fontFamily="monospace">AI</text>
       <text x="410" y="121" textAnchor="middle" fontSize="8" fill="#a78bfa" fontFamily="monospace">CLAUDE</text>
-      {[0, 60, 120, 180, 240, 300].map((deg, i) => {
+      {[0,60,120,180,240,300].map((deg,i) => {
         const rad = deg * Math.PI / 180;
-        return <circle key={`o-${i}`} cx={410 + 44 * Math.cos(rad)} cy={110 + 44 * Math.sin(rad)} r="3.5" fill={orbitColors[i]} opacity="0.95" filter="url(#svgGlow)" />;
+        return <circle key={`o-${i}`} cx={410+44*Math.cos(rad)} cy={110+44*Math.sin(rad)} r="3.5" fill={orbitColors[i]} opacity="0.95" filter="url(#svgGlow)"/>;
       })}
-      {lines.map(([a, b], i) => <line key={`l2-${i}`} x1={nodesR[a][0]} y1={nodesR[a][1]} x2={nodesR[b][0]} y2={nodesR[b][1]} stroke="#2563eb" strokeWidth={i < 5 ? 1.5 : 1} opacity={i < 5 ? 0.5 : 0.3} />)}
-      {nodesR.map(([x, y], i) => <circle key={`n2-${i}`} cx={x} cy={y} r={i === 1 ? 10 : 6} fill={colorsR[i]} opacity="0.95" filter="url(#svgGlow)" />)}
-      {[[200, 38], [308, 182], [500, 28], [522, 186], [352, 23], [472, 194], [248, 84], [562, 74]].map(([x, y], i) => (
-        <rect key={`p-${i}`} x={x} y={y} width="4" height="4" rx="1" fill={orbitColors[i % 6]} opacity="0.45" transform={`rotate(${i * 22} ${x + 2} ${y + 2})`} />
+      {lines.map(([a,b],i) => <line key={`l2-${i}`} x1={nodesR[a][0]} y1={nodesR[a][1]} x2={nodesR[b][0]} y2={nodesR[b][1]} stroke="#2563eb" strokeWidth={i<5?1.5:1} opacity={i<5?0.5:0.3}/>)}
+      {nodesR.map(([x,y],i) => <circle key={`n2-${i}`} cx={x} cy={y} r={i===1?10:6} fill={colorsR[i]} opacity="0.95" filter="url(#svgGlow)"/>)}
+      {[[200,38],[308,182],[500,28],[522,186],[352,23],[472,194],[248,84],[562,74]].map(([x,y],i) => (
+        <rect key={`p-${i}`} x={x} y={y} width="4" height="4" rx="1" fill={orbitColors[i%6]} opacity="0.45" transform={`rotate(${i*22} ${x+2} ${y+2})`}/>
       ))}
-      <line x1="0" y1="110" x2="820" y2="110" stroke="#a78bfa" strokeWidth="0.5" opacity="0.08" strokeDasharray="2 10" />
+      <line x1="0" y1="110" x2="820" y2="110" stroke="#a78bfa" strokeWidth="0.5" opacity="0.08" strokeDasharray="2 10"/>
     </svg>
   );
 }
+
 function SvgCoworkLogic() {
   return (
-    <svg width="100%" height="100%" viewBox="0 0 820 150" preserveAspectRatio="xMidYMid slice" style={{ minHeight: 150 }}>
+    <svg width="100%" height="100%" viewBox="0 0 820 150" preserveAspectRatio="xMidYMid slice" style={{minHeight: 150}}>
       <defs>
-        <radialGradient id="cg1" cx="25%" cy="50%"><stop offset="0%" stopColor="#7c3aed" stopOpacity="0.3" /><stop offset="100%" stopColor="#7c3aed" stopOpacity="0" /></radialGradient>
-        <radialGradient id="cg2" cx="78%" cy="50%"><stop offset="0%" stopColor="#2563eb" stopOpacity="0.25" /><stop offset="100%" stopColor="#2563eb" stopOpacity="0" /></radialGradient>
+        <radialGradient id="cg1" cx="25%" cy="50%"><stop offset="0%" stopColor="#7c3aed" stopOpacity="0.3"/><stop offset="100%" stopColor="#7c3aed" stopOpacity="0"/></radialGradient>
+        <radialGradient id="cg2" cx="78%" cy="50%"><stop offset="0%" stopColor="#2563eb" stopOpacity="0.25"/><stop offset="100%" stopColor="#2563eb" stopOpacity="0"/></radialGradient>
       </defs>
-      <ellipse cx="200" cy="75" rx="300" ry="120" fill="url(#cg1)" />
-      <ellipse cx="620" cy="75" rx="280" ry="120" fill="url(#cg2)" />
-      <rect x="30" y="10" width="355" height="130" rx="8" fill="#0f0f1a" stroke="rgba(167,139,250,0.25)" strokeWidth="1" />
-      <rect x="30" y="10" width="355" height="26" rx="8" fill="#16162a" />
-      <rect x="30" y="26" width="355" height="10" fill="#16162a" />
-      <circle cx="46" cy="23" r="4" fill="#f87171" opacity="0.7" />
-      <circle cx="60" cy="23" r="4" fill="#fbbf24" opacity="0.7" />
-      <circle cx="74" cy="23" r="4" fill="#34d399" opacity="0.7" />
+      <ellipse cx="200" cy="75" rx="300" ry="120" fill="url(#cg1)"/>
+      <ellipse cx="620" cy="75" rx="280" ry="120" fill="url(#cg2)"/>
+      <rect x="30" y="10" width="355" height="130" rx="8" fill="#0f0f1a" stroke="rgba(167,139,250,0.25)" strokeWidth="1"/>
+      <rect x="30" y="10" width="355" height="26" rx="8" fill="#16162a"/>
+      <rect x="30" y="26" width="355" height="10" fill="#16162a"/>
+      <circle cx="46" cy="23" r="4" fill="#f87171" opacity="0.7"/>
+      <circle cx="60" cy="23" r="4" fill="#fbbf24" opacity="0.7"/>
+      <circle cx="74" cy="23" r="4" fill="#34d399" opacity="0.7"/>
       <text x="210" y="26" textAnchor="middle" fontSize="9" fill="#9ca3af" fontFamily="monospace">claude.ai — New conversation</text>
-      <rect x="30" y="36" width="54" height="104" fill="#0a0a14" />
-      {[["✦", 50], ["💬", 66], ["📁", 82], ["⚙️", 98]].map(([ic, y], i) => (<text key={i} x="57" y={y} textAnchor="middle" fontSize="11" opacity={i === 1 ? "1" : "0.4"}>{ic}</text>))}
-      <circle cx="98" cy="54" r="8" fill="rgba(167,139,250,0.2)" stroke="#a78bfa" strokeWidth="1" />
+      <rect x="30" y="36" width="54" height="104" fill="#0a0a14"/>
+      {[["✦",50],["💬",66],["📁",82],["⚙️",98]].map(([ic,y],i) => (<text key={i} x="57" y={y} textAnchor="middle" fontSize="11" opacity={i===1?"1":"0.4"}>{ic}</text>))}
+      <circle cx="98" cy="54" r="8" fill="rgba(167,139,250,0.2)" stroke="#a78bfa" strokeWidth="1"/>
       <text x="98" y="58" textAnchor="middle" fontSize="8" fill="#c4b5fd" fontWeight="700">C</text>
-      <rect x="112" y="44" width="178" height="28" rx="6" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.2)" strokeWidth="1" />
-      <rect x="118" y="51" width="80" height="5" rx="2" fill="#9ca3af" opacity="0.5" />
-      <rect x="118" y="60" width="120" height="5" rx="2" fill="#9ca3af" opacity="0.35" />
-      <rect x="189" y="82" width="152" height="20" rx="6" fill="rgba(96,165,250,0.12)" stroke="rgba(96,165,250,0.2)" strokeWidth="1" />
-      <rect x="196" y="89" width="105" height="5" rx="2" fill="#93c5fd" opacity="0.55" />
-      <rect x="112" y="110" width="198" height="22" rx="6" fill="rgba(167,139,250,0.08)" stroke="rgba(167,139,250,0.15)" strokeWidth="1" />
-      <rect x="118" y="117" width="90" height="4" rx="2" fill="#9ca3af" opacity="0.4" />
-      <rect x="118" y="124" width="140" height="4" rx="2" fill="#9ca3af" opacity="0.3" />
-      <rect x="30" y="135" width="88" height="14" rx="4" fill="rgba(167,139,250,0.15)" stroke="rgba(167,139,250,0.3)" strokeWidth="0.8" />
+      <rect x="112" y="44" width="178" height="28" rx="6" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.2)" strokeWidth="1"/>
+      <rect x="118" y="51" width="80" height="5" rx="2" fill="#9ca3af" opacity="0.5"/>
+      <rect x="118" y="60" width="120" height="5" rx="2" fill="#9ca3af" opacity="0.35"/>
+      <rect x="189" y="82" width="152" height="20" rx="6" fill="rgba(96,165,250,0.12)" stroke="rgba(96,165,250,0.2)" strokeWidth="1"/>
+      <rect x="196" y="89" width="105" height="5" rx="2" fill="#93c5fd" opacity="0.55"/>
+      <rect x="112" y="110" width="198" height="22" rx="6" fill="rgba(167,139,250,0.08)" stroke="rgba(167,139,250,0.15)" strokeWidth="1"/>
+      <rect x="118" y="117" width="90" height="4" rx="2" fill="#9ca3af" opacity="0.4"/>
+      <rect x="118" y="124" width="140" height="4" rx="2" fill="#9ca3af" opacity="0.3"/>
+      <rect x="30" y="135" width="88" height="14" rx="4" fill="rgba(167,139,250,0.15)" stroke="rgba(167,139,250,0.3)" strokeWidth="0.8"/>
       <text x="74" y="144" textAnchor="middle" fontSize="7.5" fill="#c4b5fd" fontFamily="monospace" fontWeight="700">Claude Chat</text>
       <text x="411" y="80" textAnchor="middle" fontSize="16" fill="#a78bfa" opacity="0.7">→</text>
       <text x="411" y="95" textAnchor="middle" fontSize="7" fill="#6b7280" fontFamily="monospace">upgrade</text>
-      <rect x="435" y="10" width="355" height="130" rx="8" fill="#0f0f1a" stroke="rgba(96,165,250,0.3)" strokeWidth="1.5" />
-      <rect x="435" y="10" width="355" height="26" rx="8" fill="#0d1629" />
-      <rect x="435" y="26" width="355" height="10" fill="#0d1629" />
-      <circle cx="451" cy="23" r="4" fill="#f87171" opacity="0.7" />
-      <circle cx="465" cy="23" r="4" fill="#fbbf24" opacity="0.7" />
-      <circle cx="479" cy="23" r="4" fill="#34d399" opacity="0.7" />
+      <rect x="435" y="10" width="355" height="130" rx="8" fill="#0f0f1a" stroke="rgba(96,165,250,0.3)" strokeWidth="1.5"/>
+      <rect x="435" y="10" width="355" height="26" rx="8" fill="#0d1629"/>
+      <rect x="435" y="26" width="355" height="10" fill="#0d1629"/>
+      <circle cx="451" cy="23" r="4" fill="#f87171" opacity="0.7"/>
+      <circle cx="465" cy="23" r="4" fill="#fbbf24" opacity="0.7"/>
+      <circle cx="479" cy="23" r="4" fill="#34d399" opacity="0.7"/>
       <text x="612" y="26" textAnchor="middle" fontSize="9" fill="#93c5fd" fontFamily="monospace">claude.ai — Cowork</text>
-      <rect x="435" y="36" width="54" height="104" fill="#080e1e" />
-      {[["✦", 50], ["🎯", 66], ["🔌", 82], ["⚡", 98]].map(([ic, y], i) => (<text key={i} x="462" y={y} textAnchor="middle" fontSize="11" opacity={i === 1 ? "1" : "0.45"}>{ic}</text>))}
-      <rect x="489" y="38" width="128" height="100" rx="4" fill="rgba(37,99,235,0.07)" stroke="rgba(96,165,250,0.15)" strokeWidth="0.8" />
+      <rect x="435" y="36" width="54" height="104" fill="#080e1e"/>
+      {[["✦",50],["🎯",66],["🔌",82],["⚡",98]].map(([ic,y],i) => (<text key={i} x="462" y={y} textAnchor="middle" fontSize="11" opacity={i===1?"1":"0.45"}>{ic}</text>))}
+      <rect x="489" y="38" width="128" height="100" rx="4" fill="rgba(37,99,235,0.07)" stroke="rgba(96,165,250,0.15)" strokeWidth="0.8"/>
       <text x="553" y="51" textAnchor="middle" fontSize="8" fill="#60a5fa" fontFamily="monospace" fontWeight="700">TASKS</text>
-      {[["📧 Email Manager", "#34d399", true], ["📊 Morning Brief", "#a78bfa", false], ["📁 File Organizer", "#f59e0b", false]].map(([t, c, active], i) => (
+      {[["📧 Email Manager","#34d399",true],["📊 Morning Brief","#a78bfa",false],["📁 File Organizer","#f59e0b",false]].map(([t,c,active],i) => (
         <g key={i}>
-          <rect x="494" y={56 + i * 26} width="118" height="20" rx="4" fill={active ? `${c}18` : "rgba(255,255,255,0.03)"} stroke={active ? c : "rgba(255,255,255,0.07)"} strokeWidth={active ? "1.2" : "0.8"} />
-          <text x="500" y={69 + i * 26} fontSize="7.5" fill={active ? c : "#6b7280"} fontFamily="monospace">{t}</text>
-          {active && <circle cx="602" cy={65 + i * 26} r="3" fill={c} opacity="0.8" />}
+          <rect x="494" y={56+i*26} width="118" height="20" rx="4" fill={active?`${c}18`:"rgba(255,255,255,0.03)"} stroke={active?c:"rgba(255,255,255,0.07)"} strokeWidth={active?"1.2":"0.8"}/>
+          <text x="500" y={69+i*26} fontSize="7.5" fill={active?c:"#6b7280"} fontFamily="monospace">{t}</text>
+          {active && <circle cx="602" cy={65+i*26} r="3" fill={c} opacity="0.8"/>}
         </g>
       ))}
-      <rect x="628" y="44" width="65" height="14" rx="4" fill="rgba(52,211,153,0.12)" stroke="rgba(52,211,153,0.3)" strokeWidth="0.8" />
+      <rect x="628" y="44" width="65" height="14" rx="4" fill="rgba(52,211,153,0.12)" stroke="rgba(52,211,153,0.3)" strokeWidth="0.8"/>
       <text x="660" y="53" textAnchor="middle" fontSize="7" fill="#6ee7b7" fontFamily="monospace">📧 Gmail ✓</text>
-      <rect x="700" y="44" width="74" height="14" rx="4" fill="rgba(167,139,250,0.12)" stroke="rgba(167,139,250,0.3)" strokeWidth="0.8" />
+      <rect x="700" y="44" width="74" height="14" rx="4" fill="rgba(167,139,250,0.12)" stroke="rgba(167,139,250,0.3)" strokeWidth="0.8"/>
       <text x="737" y="53" textAnchor="middle" fontSize="7" fill="#c4b5fd" fontFamily="monospace">📅 Calendar ✓</text>
-      {[0, 1, 2, 3, 4, 5].map(i => (<rect key={i} x="628" y={64 + i * 9} width={[135, 110, 125, 90, 118, 70][i]} height="4" rx="2" fill="#e2e0f0" opacity={0.12 - i * 0.015} />))}
-      <rect x="628" y="120" width="44" height="12" rx="6" fill="rgba(52,211,153,0.2)" stroke="rgba(52,211,153,0.4)" strokeWidth="0.8" />
-      <circle cx="636" cy="126" r="2.5" fill="#34d399" />
+      {[0,1,2,3,4,5].map(i => (<rect key={i} x="628" y={64+i*9} width={[135,110,125,90,118,70][i]} height="4" rx="2" fill="#e2e0f0" opacity={0.12 - i*0.015}/>))}
+      <rect x="628" y="120" width="44" height="12" rx="6" fill="rgba(52,211,153,0.2)" stroke="rgba(52,211,153,0.4)" strokeWidth="0.8"/>
+      <circle cx="636" cy="126" r="2.5" fill="#34d399"/>
       <text x="655" y="130" textAnchor="middle" fontSize="7" fill="#6ee7b7" fontFamily="monospace">Running</text>
-      <rect x="435" y="135" width="78" height="14" rx="4" fill="rgba(96,165,250,0.18)" stroke="rgba(96,165,250,0.4)" strokeWidth="0.8" />
+      <rect x="435" y="135" width="78" height="14" rx="4" fill="rgba(96,165,250,0.18)" stroke="rgba(96,165,250,0.4)" strokeWidth="0.8"/>
       <text x="474" y="144" textAnchor="middle" fontSize="7.5" fill="#93c5fd" fontFamily="monospace" fontWeight="700">⚡ Cowork</text>
     </svg>
   );
 }
+
 function SvgUseCasesLogic() {
-  const cards = [[60, 30, 180, 90, "#ec4899", "📄", "Contracts"], [220, 50, 170, 80, "#a78bfa", "📊", "Analytics"], [380, 25, 165, 95, "#60a5fa", "📧", "Email"], [530, 45, 170, 85, "#34d399", "📅", "Calendar"], [690, 30, 110, 90, "#f59e0b", "🚀", "Launch"]];
+  const cards = [[60,30,180,90,"#ec4899","📄","Contracts"],[220,50,170,80,"#a78bfa","📊","Analytics"],[380,25,165,95,"#60a5fa","📧","Email"],[530,45,170,85,"#34d399","📅","Calendar"],[690,30,110,90,"#f59e0b","🚀","Launch"]];
   return (
-    <svg width="100%" height="100%" viewBox="0 0 820 150" preserveAspectRatio="xMidYMid slice" style={{ minHeight: 150 }}>
-      <defs><radialGradient id="ug1" cx="50%" cy="50%"><stop offset="0%" stopColor="#ec4899" stopOpacity="0.35" /><stop offset="100%" stopColor="#ec4899" stopOpacity="0" /></radialGradient><filter id="uGlow"><feGaussianBlur stdDeviation="2" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter></defs>
-      <ellipse cx="410" cy="75" rx="400" ry="120" fill="url(#ug1)" />
-      {cards.map(([x, y, w, h, c, emoji, label], i) => (
+    <svg width="100%" height="100%" viewBox="0 0 820 150" preserveAspectRatio="xMidYMid slice" style={{minHeight: 150}}>
+      <defs><radialGradient id="ug1" cx="50%" cy="50%"><stop offset="0%" stopColor="#ec4899" stopOpacity="0.35"/><stop offset="100%" stopColor="#ec4899" stopOpacity="0"/></radialGradient><filter id="uGlow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+      <ellipse cx="410" cy="75" rx="400" ry="120" fill="url(#ug1)"/>
+      {cards.map(([x,y,w,h,c,emoji,label],i) => (
         <g key={i}>
-          <rect x={x} y={y} width={w} height={h} rx="10" fill={`${c}10`} stroke={c} strokeWidth="1.2" opacity="0.7" />
-          <text x={x + 20} y={y + 30} fontSize="18" filter="url(#uGlow)">{emoji}</text>
-          <text x={x + 16} y={y + 52} fontSize="10" fill={c} fontFamily="monospace" fontWeight="700">{label}</text>
-          <rect x={x + 14} y={y + 60} width={w - 28} height="3" rx="1.5" fill={c} opacity="0.3" />
-          <rect x={x + 14} y={y + 60} width={(w - 28) * 0.65} height="3" rx="1.5" fill={c} opacity="0.7" />
+          <rect x={x} y={y} width={w} height={h} rx="10" fill={`${c}10`} stroke={c} strokeWidth="1.2" opacity="0.7"/>
+          <text x={x+20} y={y+30} fontSize="18" filter="url(#uGlow)">{emoji}</text>
+          <text x={x+16} y={y+52} fontSize="10" fill={c} fontFamily="monospace" fontWeight="700">{label}</text>
+          <rect x={x+14} y={y+60} width={w-28} height="3" rx="1.5" fill={c} opacity="0.3"/>
+          <rect x={x+14} y={y+60} width={(w-28)*0.65} height="3" rx="1.5" fill={c} opacity="0.7"/>
         </g>
       ))}
-      {[[170, 22, "3hr→8min", "#ec4899"], [350, 44, "5hr→45min", "#a78bfa"], [520, 20, "2hr→20min", "#60a5fa"]].map(([x, y, t, c], i) => (
+      {[[170,22,"3hr→8min","#ec4899"],[350,44,"5hr→45min","#a78bfa"],[520,20,"2hr→20min","#60a5fa"]].map(([x,y,t,c],i) => (
         <g key={i}>
-          <rect x={x} y={y} width="88" height="17" rx="8" fill={`${c}20`} stroke={c} strokeWidth="1" opacity="0.8" />
-          <text x={x + 44} y={y + 12} textAnchor="middle" fontSize="8" fill={c} fontFamily="monospace" fontWeight="700">{t}</text>
-        </g>
-      ))}
-    </svg>
-  );
-}
-function SvgIncomeLogic() {
-  const pts = [40, 120, 120, 100, 200, 105, 280, 80, 360, 75, 440, 55, 520, 48, 600, 35, 680, 22, 760, 15];
-  const pathD = pts.reduce((s, v, i) => i % 2 === 0 ? s + `${i === 0 ? 'M' : 'L'}${v},${pts[i + 1]} ` : s, '');
-  const areaD = pathD + `L760,140 L40,140 Z`;
-  return (
-    <svg width="100%" height="100%" viewBox="0 0 820 150" preserveAspectRatio="xMidYMid slice" style={{ minHeight: 150 }}>
-      <defs><radialGradient id="ig1" cx="70%" cy="30%"><stop offset="0%" stopColor="#fbbf24" stopOpacity="0.4" /><stop offset="100%" stopColor="#fbbf24" stopOpacity="0" /></radialGradient><linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#fbbf24" stopOpacity="0.35" /><stop offset="100%" stopColor="#fbbf24" stopOpacity="0.02" /></linearGradient><filter id="iGlow"><feGaussianBlur stdDeviation="2" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter></defs>
-      <ellipse cx="500" cy="60" rx="380" ry="120" fill="url(#ig1)" />
-      {[40, 80, 120].map(y => <line key={y} x1="30" y1={y} x2="790" y2={y} stroke="#fbbf24" strokeWidth="0.5" opacity="0.1" />)}
-      <path d={areaD} fill="url(#chartGrad)" />
-      <path d={pathD} fill="none" stroke="#fbbf24" strokeWidth="2.5" opacity="0.9" filter="url(#iGlow)" />
-      {Array.from({ length: pts.length / 2 }, (_, i) => (<circle key={i} cx={pts[i * 2]} cy={pts[i * 2 + 1]} r="4" fill="#0a0a14" stroke="#fbbf24" strokeWidth="2" opacity="0.9" />))}
-      {[["LV.1", "$"], [null, null], [null, null], ["LV.2", "$$"], [null, null], [null, null], ["LV.3", "$$$"], [null, null], ["LV.4", "$$$$"]].map(([lv, m], i) => lv && (
-        <g key={i}>
-          <text x={pts[i * 2]} y={pts[i * 2 + 1] - 12} textAnchor="middle" fontSize="8" fill="#fbbf24" opacity="0.8" fontFamily="monospace">{m}</text>
-          <text x={pts[i * 2]} y={142} textAnchor="middle" fontSize="8" fill="#6b7280" fontFamily="monospace">{lv}</text>
-        </g>
-      ))}
-      <polygon points="768,10 786,15 768,20" fill="#fbbf24" opacity="0.8" />
-    </svg>
-  );
-}
-function SvgTutorLogic() {
-  return (
-    <svg width="100%" height="100%" viewBox="0 0 820 150" preserveAspectRatio="xMidYMid slice" style={{ minHeight: 150 }}>
-      <defs><radialGradient id="tg1" cx="40%" cy="50%"><stop offset="0%" stopColor="#38bdf8" stopOpacity="0.45" /><stop offset="100%" stopColor="#38bdf8" stopOpacity="0" /></radialGradient><radialGradient id="tg2" cx="75%" cy="40%"><stop offset="0%" stopColor="#a78bfa" stopOpacity="0.3" /><stop offset="100%" stopColor="#a78bfa" stopOpacity="0" /></radialGradient><filter id="tGlow"><feGaussianBlur stdDeviation="2" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter></defs>
-      <ellipse cx="330" cy="75" rx="320" ry="130" fill="url(#tg1)" />
-      <ellipse cx="620" cy="60" rx="240" ry="100" fill="url(#tg2)" />
-      <rect x="60" y="35" width="55" height="80" rx="4" fill="rgba(56,189,248,0.15)" stroke="#38bdf8" strokeWidth="1.5" opacity="0.8" />
-      <line x1="87" y1="35" x2="87" y2="115" stroke="#38bdf8" strokeWidth="1.5" opacity="0.5" />
-      {[50, 62, 74, 86, 98].map(y => <line key={`l1-${y}`} x1="68" y1={y} x2="83" y2={y} stroke="#38bdf8" strokeWidth="1" opacity="0.4" />)}
-      {[50, 62, 74, 86, 98].map(y => <line key={`l2-${y}`} x1="93" y1={y} x2="108" y2={y} stroke="#38bdf8" strokeWidth="1" opacity="0.4" />)}
-      <text x="87" y="127" textAnchor="middle" fontSize="9" fill="#38bdf8" fontFamily="monospace" opacity="0.7">LEARN</text>
-      {[[200, 55, 38], [270, 40, 28], [330, 55, 22], [375, 42, 16]].map(([x, y, r], i) => (<circle key={i} cx={x} cy={y} r={r} fill={`rgba(56,189,248,${0.06 + i * 0.04})`} stroke="#38bdf8" strokeWidth="1" opacity="0.6" />))}
-      {[["Python", 420, 52, "#60a5fa"], ["SEO", 510, 45, "#a78bfa"], ["Finance", 590, 55, "#34d399"], ["Design", 670, 48, "#f59e0b"], ["English", 740, 55, "#ec4899"]].map(([label, x, y, c], i) => (
-        <g key={i}>
-          <rect x={x - 28} y={y - 10} width={label.length * 7 + 8} height="20" rx="10" fill={`${c}18`} stroke={c} strokeWidth="1.2" opacity="0.85" />
-          <text x={x + label.length * 3 - 24} y={y + 4} fontSize="9" fill={c} fontFamily="monospace" fontWeight="700">{label}</text>
-        </g>
-      ))}
-      {[[160, 30], [200, 110], [380, 25], [410, 120], [650, 30], [760, 100]].map(([x, y], i) => (
-        <g key={i} opacity="0.5">
-          <line x1={x - 4} y1={y} x2={x + 4} y2={y} stroke={["#38bdf8", "#a78bfa", "#34d399", "#f59e0b", "#ec4899", "#60a5fa"][i]} strokeWidth="1.5" />
-          <line x1={x} y1={y - 4} x2={x} y2={y + 4} stroke={["#38bdf8", "#a78bfa", "#34d399", "#f59e0b", "#ec4899", "#60a5fa"][i]} strokeWidth="1.5" />
-        </g>
-      ))}
-    </svg>
-  );
-}
-function SvgResourcesLogic() {
-  return (
-    <svg width="100%" height="100%" viewBox="0 0 820 150" preserveAspectRatio="xMidYMid slice" style={{ minHeight: 150 }}>
-      <defs><radialGradient id="rg1" cx="35%" cy="50%"><stop offset="0%" stopColor="#60a5fa" stopOpacity="0.45" /><stop offset="100%" stopColor="#60a5fa" stopOpacity="0" /></radialGradient><radialGradient id="rg2" cx="75%" cy="50%"><stop offset="0%" stopColor="#34d399" stopOpacity="0.25" /><stop offset="100%" stopColor="#34d399" stopOpacity="0" /></radialGradient><filter id="rGlow"><feGaussianBlur stdDeviation="2" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter></defs>
-      <ellipse cx="280" cy="75" rx="300" ry="130" fill="url(#rg1)" />
-      <ellipse cx="620" cy="75" rx="240" ry="120" fill="url(#rg2)" />
-      {[[65, 95, 100, 18, "#60a5fa"], [60, 78, 108, 18, "#a78bfa"], [55, 62, 116, 18, "#34d399"]].map(([x, y, w, h, c], i) => (
-        <rect key={i} x={x} y={y} width={w} height={h} rx="3" fill={`${c}18`} stroke={c} strokeWidth="1.5" opacity="0.8" />
-      ))}
-      <text x="113" y="108" textAnchor="middle" fontSize="8" fill="#60a5fa" fontFamily="monospace" opacity="0.8">DOCS</text>
-      <text x="113" y="91" textAnchor="middle" fontSize="8" fill="#a78bfa" fontFamily="monospace" opacity="0.8">GUIDE</text>
-      <text x="113" y="74" textAnchor="middle" fontSize="8" fill="#34d399" fontFamily="monospace" opacity="0.8">CODE</text>
-      <circle cx="220" cy="75" r="26" fill="rgba(255,255,255,0.04)" stroke="#60a5fa" strokeWidth="1.5" opacity="0.7" />
-      <text x="220" y="80" textAnchor="middle" fontSize="18" opacity="0.9">⭐</text>
-      <text x="220" y="113" textAnchor="middle" fontSize="8" fill="#60a5fa" fontFamily="monospace" opacity="0.7">GitHub</text>
-      {[
-        [320, 35, 160, 50, "#60a5fa", "📖 Anthropic Docs"],
-        [500, 50, 145, 50, "#a78bfa", "⚡ Skills Guide PDF"],
-        [665, 35, 135, 50, "#34d399", "🎓 Learn Free"],
-      ].map(([x, y, w, h, c, label], i) => (
-        <g key={i}>
-          <rect x={x} y={y} width={w} height={h} rx="8" fill={`${c}10`} stroke={c} strokeWidth="1.2" opacity="0.75" />
-          <text x={x + 12} y={y + 30} fontSize="10" fill={c} fontFamily="monospace" fontWeight="600">{label}</text>
-          <line x1={x + 12} y1={y + 38} x2={x + w - 12} y2={y + 38} stroke={c} strokeWidth="1" opacity="0.35" />
+          <rect x={x} y={y} width="88" height="17" rx="8" fill={`${c}20`} stroke={c} strokeWidth="1" opacity="0.8"/>
+          <text x={x+44} y={y+12} textAnchor="middle" fontSize="8" fill={c} fontFamily="monospace" fontWeight="700">{t}</text>
         </g>
       ))}
     </svg>
   );
 }
 
+function SvgIncomeLogic() {
+  const pts = [40,120, 120,100, 200,105, 280,80, 360,75, 440,55, 520,48, 600,35, 680,22, 760,15];
+  const pathD = pts.reduce((s,v,i) => i%2===0 ? s+`${i===0?'M':'L'}${v},${pts[i+1]} ` : s, '');
+  const areaD = pathD + `L760,140 L40,140 Z`;
+  return (
+    <svg width="100%" height="100%" viewBox="0 0 820 150" preserveAspectRatio="xMidYMid slice" style={{minHeight: 150}}>
+      <defs><radialGradient id="ig1" cx="70%" cy="30%"><stop offset="0%" stopColor="#fbbf24" stopOpacity="0.4"/><stop offset="100%" stopColor="#fbbf24" stopOpacity="0"/></radialGradient><linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#fbbf24" stopOpacity="0.35"/><stop offset="100%" stopColor="#fbbf24" stopOpacity="0.02"/></linearGradient><filter id="iGlow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+      <ellipse cx="500" cy="60" rx="380" ry="120" fill="url(#ig1)"/>
+      {[40,80,120].map(y => <line key={y} x1="30" y1={y} x2="790" y2={y} stroke="#fbbf24" strokeWidth="0.5" opacity="0.1"/>)}
+      <path d={areaD} fill="url(#chartGrad)"/>
+      <path d={pathD} fill="none" stroke="#fbbf24" strokeWidth="2.5" opacity="0.9" filter="url(#iGlow)"/>
+      {Array.from({length:pts.length/2},(_,i) => (<circle key={i} cx={pts[i*2]} cy={pts[i*2+1]} r="4" fill="#0a0a14" stroke="#fbbf24" strokeWidth="2" opacity="0.9"/>))}
+      {[["LV.1","$"],[null,null],[null,null],["LV.2","$$"],[null,null],[null,null],["LV.3","$$$"],[null,null],["LV.4","$$$$"]].map(([lv,m],i) => lv && (
+        <g key={i}>
+          <text x={pts[i*2]} y={pts[i*2+1]-12} textAnchor="middle" fontSize="8" fill="#fbbf24" opacity="0.8" fontFamily="monospace">{m}</text>
+          <text x={pts[i*2]} y={142} textAnchor="middle" fontSize="8" fill="#6b7280" fontFamily="monospace">{lv}</text>
+        </g>
+      ))}
+      <polygon points="768,10 786,15 768,20" fill="#fbbf24" opacity="0.8"/>
+    </svg>
+  );
+}
+
+function SvgTutorLogic() {
+  return (
+    <svg width="100%" height="100%" viewBox="0 0 820 150" preserveAspectRatio="xMidYMid slice" style={{minHeight: 150}}>
+      <defs><radialGradient id="tg1" cx="40%" cy="50%"><stop offset="0%" stopColor="#38bdf8" stopOpacity="0.45"/><stop offset="100%" stopColor="#38bdf8" stopOpacity="0"/></radialGradient><radialGradient id="tg2" cx="75%" cy="40%"><stop offset="0%" stopColor="#a78bfa" stopOpacity="0.3"/><stop offset="100%" stopColor="#a78bfa" stopOpacity="0"/></radialGradient><filter id="tGlow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+      <ellipse cx="330" cy="75" rx="320" ry="130" fill="url(#tg1)"/>
+      <ellipse cx="620" cy="60" rx="240" ry="100" fill="url(#tg2)"/>
+      <rect x="60" y="35" width="55" height="80" rx="4" fill="rgba(56,189,248,0.15)" stroke="#38bdf8" strokeWidth="1.5" opacity="0.8"/>
+      <line x1="87" y1="35" x2="87" y2="115" stroke="#38bdf8" strokeWidth="1.5" opacity="0.5"/>
+      {[50,62,74,86,98].map(y => <line key={`l1-${y}`} x1="68" y1={y} x2="83" y2={y} stroke="#38bdf8" strokeWidth="1" opacity="0.4"/>)}
+      {[50,62,74,86,98].map(y => <line key={`l2-${y}`} x1="93" y1={y} x2="108" y2={y} stroke="#38bdf8" strokeWidth="1" opacity="0.4"/>)}
+      <text x="87" y="127" textAnchor="middle" fontSize="9" fill="#38bdf8" fontFamily="monospace" opacity="0.7">LEARN</text>
+      {[[200,55,38],[270,40,28],[330,55,22],[375,42,16]].map(([x,y,r],i) => (<circle key={i} cx={x} cy={y} r={r} fill={`rgba(56,189,248,${0.06+i*0.04})`} stroke="#38bdf8" strokeWidth="1" opacity="0.6"/>))}
+      {[["Python",420,52,"#60a5fa"],["SEO",510,45,"#a78bfa"],["Finance",590,55,"#34d399"],["Design",670,48,"#f59e0b"],["English",740,55,"#ec4899"]].map(([label,x,y,c],i) => (
+        <g key={i}>
+          <rect x={x-28} y={y-10} width={label.length*7+8} height="20" rx="10" fill={`${c}18`} stroke={c} strokeWidth="1.2" opacity="0.85"/>
+          <text x={x+label.length*3-24} y={y+4} fontSize="9" fill={c} fontFamily="monospace" fontWeight="700">{label}</text>
+        </g>
+      ))}
+      {[[160,30],[200,110],[380,25],[410,120],[650,30],[760,100]].map(([x,y],i) => (
+        <g key={i} opacity="0.5">
+          <line x1={x-4} y1={y} x2={x+4} y2={y} stroke={["#38bdf8","#a78bfa","#34d399","#f59e0b","#ec4899","#60a5fa"][i]} strokeWidth="1.5"/>
+          <line x1={x} y1={y-4} x2={x} y2={y+4} stroke={["#38bdf8","#a78bfa","#34d399","#f59e0b","#ec4899","#60a5fa"][i]} strokeWidth="1.5"/>
+        </g>
+      ))}
+    </svg>
+  );
+}
+
+function SvgResourcesLogic() {
+  return (
+    <svg width="100%" height="100%" viewBox="0 0 820 150" preserveAspectRatio="xMidYMid slice" style={{minHeight: 150}}>
+      <defs><radialGradient id="rg1" cx="35%" cy="50%"><stop offset="0%" stopColor="#60a5fa" stopOpacity="0.45"/><stop offset="100%" stopColor="#60a5fa" stopOpacity="0"/></radialGradient><radialGradient id="rg2" cx="75%" cy="50%"><stop offset="0%" stopColor="#34d399" stopOpacity="0.25"/><stop offset="100%" stopColor="#34d399" stopOpacity="0"/></radialGradient><filter id="rGlow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+      <ellipse cx="280" cy="75" rx="300" ry="130" fill="url(#rg1)"/>
+      <ellipse cx="620" cy="75" rx="240" ry="120" fill="url(#rg2)"/>
+      {[[65,95,100,18,"#60a5fa"],[60,78,108,18,"#a78bfa"],[55,62,116,18,"#34d399"]].map(([x,y,w,h,c],i) => (
+        <rect key={i} x={x} y={y} width={w} height={h} rx="3" fill={`${c}18`} stroke={c} strokeWidth="1.5" opacity="0.8"/>
+      ))}
+      <text x="113" y="108" textAnchor="middle" fontSize="8" fill="#60a5fa" fontFamily="monospace" opacity="0.8">DOCS</text>
+      <text x="113" y="91" textAnchor="middle" fontSize="8" fill="#a78bfa" fontFamily="monospace" opacity="0.8">GUIDE</text>
+      <text x="113" y="74" textAnchor="middle" fontSize="8" fill="#34d399" fontFamily="monospace" opacity="0.8">CODE</text>
+      <circle cx="220" cy="75" r="26" fill="rgba(255,255,255,0.04)" stroke="#60a5fa" strokeWidth="1.5" opacity="0.7"/>
+      <text x="220" y="80" textAnchor="middle" fontSize="18" opacity="0.9">⭐</text>
+      <text x="220" y="113" textAnchor="middle" fontSize="8" fill="#60a5fa" fontFamily="monospace" opacity="0.7">GitHub</text>
+      {[
+        [320,35,160,50,"#60a5fa","📖 Anthropic Docs"],
+        [500,50,145,50,"#a78bfa","⚡ Skills Guide PDF"],
+        [665,35,135,50,"#34d399","🎓 Learn Free"],
+      ].map(([x,y,w,h,c,label],i) => (
+        <g key={i}>
+          <rect x={x} y={y} width={w} height={h} rx="8" fill={`${c}10`} stroke={c} strokeWidth="1.2" opacity="0.75"/>
+          <text x={x+12} y={y+30} fontSize="10" fill={c} fontFamily="monospace" fontWeight="600">{label}</text>
+          <line x1={x+12} y1={y+38} x2={x+w-12} y2={y+38} stroke={c} strokeWidth="1" opacity="0.35"/>
+        </g>
+      ))}
+    </svg>
+  );
+}
 
 // ─── MODULE COMPONENTS ────────────────────────────────────────────────────────
 function SkillsIntro() {
   return (
     <div className="fade-in">
-      <h2 className="section-title" style={{ fontWeight: 800, marginBottom: 12 }}>
+      <h2 className="section-title" style={{ fontWeight: 800, margin: "8px 0 16px" }}>
         <span className="text-gradient">Claude Skills Masterclass</span>
       </h2>
       <p style={{ color: "#64748b", fontSize: 16, marginBottom: 32, lineHeight: 1.8 }}>คู่มือฉบับสมบูรณ์ในการสร้าง Skills สำหรับ Claude ตั้งแต่พื้นฐานจนถึง Production Deployment แบ่งเป็น 4 Modules ที่เรียนรู้ได้ทีละขั้นตอน</p>
-
+      
       <div className="grid-auto-fit" style={{ gap: 16, marginBottom: 32 }}>
         {[
           { icon: "🌱", label: "Module 1", title: "Foundations", desc: "เข้าใจโครงสร้าง Skill, YAML triggers, และ deploy Skill แรก" },
@@ -464,9 +465,9 @@ function SkillsIntro() {
           { icon: "🧪", label: "Module 3", title: "Testing & Iteration", desc: "5 failure modes, evals, benchmarks, A/B testing" },
           { icon: "🚀", label: "Module 4", title: "Production", desc: "State management, shift handover, scale ข้ามหลาย sessions" },
         ].map((m, i) => (
-          <Card key={i} color={["#a78bfa", "#34d399", "#f59e0b", "#ec4899"][i]} className="hover-lift">
+          <Card key={i} color={["#a78bfa","#34d399","#f59e0b","#ec4899"][i]} className="hover-lift">
             <div style={{ fontSize: 28, marginBottom: 12 }}>{m.icon}</div>
-            <div style={{ fontSize: 11, color: ["#a78bfa", "#34d399", "#f59e0b", "#ec4899"][i], fontWeight: 800, letterSpacing: 1, marginBottom: 6 }}>{m.label}</div>
+            <div style={{ fontSize: 11, color: ["#a78bfa","#34d399","#f59e0b","#ec4899"][i], fontWeight: 800, letterSpacing: 1, marginBottom: 6 }}>{m.label}</div>
             <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8, color: "#1E293B" }}>{m.title}</div>
             <div style={{ fontSize: 13, color: "#64748b", lineHeight: 1.6 }}>{m.desc}</div>
           </Card>
@@ -518,7 +519,7 @@ function SkillsModule1() {
             ))}
           </div>
           <div style={{ fontWeight: 700, color: "#EF4444", marginBottom: 16, fontSize: 13, display: 'flex', gap: 8, alignItems: 'center' }}>
-            <span>⚠️</span> 90% ของ Skill ที่ไม่ดีเกิดจากขั้นตอนนี้ — ยิ่งคลุมเครือ ยิ่งได้ผลลัพธ์แย่
+             <span>⚠️</span> 90% ของ Skill ที่ไม่ดีเกิดจากขั้นตอนนี้ — ยิ่งคลุมเครือ ยิ่งได้ผลลัพธ์แย่
           </div>
           <h4 style={{ color: "#3B82F6", marginBottom: 12, fontWeight: 800, fontSize: 15 }}>Prompt: The Skill Definition Interview</h4>
           <PromptBox color="#60a5fa">{`You are a Skill Definition Specialist. Your job is to interview 
@@ -564,7 +565,7 @@ description: Transforms messy CSV files into clean spreadsheets.
               ["ตั้ง Negative Boundaries", "บอกว่าเมื่อไหร่ที่ไม่ควร fire ป้องกัน Skill hijack conversation"],
             ].map(([rule, detail], i) => (
               <div key={i} style={{ background: "#F5F3FF", border: "1px solid #EDE9FE", borderRadius: 12, padding: "14px", display: "flex", flexDirection: "column", gap: 6 }}>
-                <span style={{ color: "#8B5CF6", fontWeight: 800, fontSize: 13 }}>Rule {i + 1}: {rule}</span>
+                <span style={{ color: "#8B5CF6", fontWeight: 800, fontSize: 13 }}>Rule {i+1}: {rule}</span>
                 <span style={{ color: "#64748b", fontSize: 13, lineHeight: 1.6 }}>{detail}</span>
               </div>
             ))}
@@ -572,8 +573,8 @@ description: Transforms messy CSV files into clean spreadsheets.
         </div>
       )
     },
-    {
-      num: 3, title: "เขียน Instructions — Workflow จริง", color: "#34d399",
+    { 
+      num: 3, title: "เขียน Instructions — Workflow จริง", color: "#34d399", 
       content: (
         <div className="fade-in">
           <p style={{ color: "#64748b", fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>ใต้ `---` marks เขียน workflow ใน plain English พร้อม heading ลำดับขั้นตอน ไม่เกิน 500 บรรทัด มี 2 ส่วนสำคัญ:</p>
@@ -626,10 +627,10 @@ QUALITY RULES:
 7. Never use vague language like "handle appropriately" or 
    "format nicely." Every instruction must be specific and testable.`}</PromptBox>
         </div>
-      )
+      ) 
     },
-    {
-      num: 4, title: "One Level Deep Rule — ไฟล์ References", color: "#f59e0b",
+    { 
+      num: 4, title: "One Level Deep Rule — ไฟล์ References", color: "#f59e0b", 
       content: (
         <div className="fade-in">
           <p style={{ color: "#64748b", fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>ถ้า instructions อ้างถึง brand guideline ขนาดใหญ่ ห้ามวาง content ทั้งหมดใน SKILL.md ให้บันทึกเป็นไฟล์แยกใน references/ folder แทน</p>
@@ -647,10 +648,10 @@ For each document:
 3. FORMAT: Structure with clear markdown headings and bullet points.
 4. VALIDATE: Check "One Level Deep" rule — no nested references.`}</PromptBox>
         </div>
-      )
+      ) 
     },
-    {
-      num: 5, title: "Assemble & Deploy — ประกอบ & ติดตั้ง", color: "#ec4899",
+    { 
+      num: 5, title: "Assemble & Deploy — ประกอบ & ติดตั้ง", color: "#ec4899", 
       content: (
         <div className="fade-in">
           <p style={{ color: "#64748b", fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>ตอนนี้มีทุกอย่างแล้ว ถึงเวลาประกอบและ deploy นำไฟล์ทั้งหมดใส่โฟลเดอร์ <code>~/.claude/skills/</code> Claude จะมองเห็นและพร้อมใช้งานทันที</p>
@@ -666,14 +667,14 @@ Claude จะ detect ได้อัตโนมัติ`}</PromptBox>
             <p style={{ color: "#475569", fontSize: 13, lineHeight: 1.8 }}>Anthropic สร้าง skill-creator ที่สร้าง Skill ให้คุณผ่านการสนทนา เพียงพิมพ์: <span style={{ color: "#10B981", fontFamily: "monospace", fontWeight: "bold" }}>"Use the skill-creator to help me build a skill for [your task]"</span> แล้วอัปโหลด templates หรือตัวอย่างงานที่มี</p>
           </div>
         </div>
-      )
+      ) 
     },
   ];
 
   return (
     <div className="fade-in">
       <Tag color="#60a5fa">🌱 Module 1</Tag>
-      <h2 className="section-title" style={{ fontWeight: 800, margin: "8px 0" }}>Foundations</h2>
+      <h2 className="section-title" style={{ fontWeight: 800, margin: "8px 0 16px" }}>Foundations</h2>
       <p style={{ color: "#64748b", fontSize: 15, lineHeight: 1.8, marginBottom: 32 }}>เรียนรู้โครงสร้างพื้นฐานของ Skill, สร้าง YAML triggers ที่ทำงานได้จริง, และ deploy Skill แรกของคุณ</p>
 
       <Card color="#60a5fa" style={{ marginBottom: 32 }}>
@@ -690,18 +691,8 @@ Claude จะ detect ได้อัตโนมัติ`}</PromptBox>
       <h3 style={{ fontWeight: 800, fontSize: 18, marginBottom: 16, color: "#1E293B" }}>5 ขั้นตอนสร้าง Skill แรก</h3>
       <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
         {steps.map((step, i) => (
-          <div key={i} style={{
-            background: "white",
-            border: `1px solid ${expanded === i ? step.color : "#E2E8F0"}`,
-            borderRadius: 16,
-            overflow: "hidden",
-            transition: "all 0.3s ease",
-            boxShadow: expanded === i ? `0 8px 24px -8px ${step.color}40` : "0 2px 4px rgba(0,0,0,0.02)"
-          }}>
-            <button onClick={() => setExpanded(expanded === i ? null : i)} style={{
-              width: "100%", background: "none", border: "none", padding: "18px 20px",
-              cursor: "pointer", display: "flex", alignItems: "center", gap: 16, textAlign: "left"
-            }}>
+          <div key={i} className="premium-card" style={{ padding: 0, overflow: "hidden", border: `1px solid ${expanded === i ? step.color : "#E2E8F0"}`, transition: "all 0.3s ease", boxShadow: expanded === i ? `0 8px 24px -8px ${step.color}40` : "0 2px 4px rgba(0,0,0,0.02)" }}>
+            <div onClick={() => setExpanded(expanded === i ? null : i)} style={{ padding: "18px 20px", cursor: "pointer", display: "flex", alignItems: "center", gap: 16, background: expanded === i ? "#F8FAFC" : "white" }}>
               <div style={{ width: 40, height: 40, borderRadius: 12, background: `${step.color}15`, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: 15, color: step.color, flexShrink: 0 }}>
                 0{step.num}
               </div>
@@ -709,9 +700,9 @@ Claude จะ detect ได้อัตโนมัติ`}</PromptBox>
                 {step.title}
               </div>
               <span style={{ color: "#94a3b8", fontSize: 20, transform: expanded === i ? "rotate(90deg)" : "none", transition: "0.3s ease" }}>›</span>
-            </button>
+            </div>
             {expanded === i && (
-              <div style={{ padding: "0 20px 24px" }}>
+              <div className="fade-in" style={{ padding: "0 20px 24px", paddingLeft: 76, background: "#F8FAFC" }}>
                 {step.content}
               </div>
             )}
@@ -722,11 +713,316 @@ Claude จะ detect ได้อัตโนมัติ`}</PromptBox>
   );
 }
 
+function SkillsModule2() {
+  const [expanded, setExpanded] = useState(null);
+  const topics = [
+    {
+      title: "Scripts — เมื่อ Instructions ไม่พอ", color: "#34d399",
+      content: (
+        <div className="fade-in">
+          <div className="grid-auto-fit" style={{ gap: 16, marginBottom: 20 }}>
+            <div style={{ background: "white", border: "1px solid rgba(52,211,153,0.3)", borderRadius: 12, padding: 16 }}>
+              <div style={{ fontWeight: 800, color: "#10B981", marginBottom: 8 }}>ใช้ Instructions เมื่อ...</div>
+              <p style={{ fontSize: 13, color: "#475569", lineHeight: 1.7 }}>งานเกี่ยวกับ judgement, ภาษา, formatting หรือการตัดสินใจ เช่น "Rewrite in our brand voice" หรือ "Draft an email"</p>
+            </div>
+            <div style={{ background: "white", border: "1px solid rgba(52,211,153,0.3)", borderRadius: 12, padding: 16 }}>
+              <div style={{ fontWeight: 800, color: "#10B981", marginBottom: 8 }}>ใช้ Scripts เมื่อ...</div>
+              <p style={{ fontSize: 13, color: "#475569", lineHeight: 1.7 }}>งานต้องการ precise computation, file manipulation, data transformation เช่น "Parse XML", "Resize images", "Calculate averages"</p>
+            </div>
+          </div>
+          <div style={{ marginBottom: 16 }}>
+            <div style={{ fontWeight: 800, color: "#10B981", marginBottom: 10 }}>ตัวอย่างโครงสร้าง Skill ที่มี Scripts</div>
+            <PromptBox color="#34d399">{`data-analyser/
+├── SKILL.md
+├── references/
+│   └── analysis-template.md
+└── scripts/
+    ├── parse-csv.py
+    └── calculate-stats.py
+
+# ใน SKILL.md อ้างถึง scripts แบบนี้:
+
+## Workflow
+1. Read the uploaded CSV file to understand its structure.
+2. Run scripts/parse-csv.py to clean the data:
+   - Command: python scripts/parse-csv.py [input] [output]
+3. Run scripts/calculate-stats.py on the cleaned data:
+   - Command: python scripts/calculate-stats.py [file]
+4. Read the output and write a human-readable summary.`}</PromptBox>
+          </div>
+          <h4 style={{ color: "#10B981", marginBottom: 12, fontWeight: 800 }}>Prompt: The Skill Script Builder</h4>
+          <PromptBox color="#34d399">{`I have a Claude Skill that needs executable scripts for tasks 
+requiring computation rather than language processing.
+
+Here is my current SKILL.md: [PASTE YOUR SKILL.MD]
+
+Computational tasks that can't be handled by instructions alone:
+[DESCRIBE EACH TASK, e.g.:
+- "Parse XML files and extract specific fields"
+- "Calculate statistical summaries of numeric data"]
+
+For each task, build a script following these rules:
+1. Language: Python (available in both Claude Code and CoWork)
+2. Interface: Accept all inputs as command-line arguments
+3. Error handling: Catch all common failures, exit with clear message
+4. Documentation: Comment block at top with purpose, args, output, errors
+5. Dependencies: Use standard library where possible; list extras in requirements.txt
+
+Output:
+- Each script file ready to save to scripts/
+- Updated SKILL.md with script references
+- requirements.txt (if external packages needed)`}</PromptBox>
+        </div>
+      )
+    },
+    {
+      title: "Multi-Skill Orchestration — จัดการหลาย Skills", color: "#f59e0b",
+      content: (
+        <div className="fade-in">
+          <p style={{ color: "#64748b", fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>เมื่อมี Skill เกิน 5 ตัว ปัญหา conflict เริ่มเกิดขึ้น: Skill ผิดตัว fire, Skills สองตัว hijack request เดียวกัน</p>
+          <div className="grid-auto-fit" style={{ gap: 12, marginBottom: 20 }}>
+            {[
+              { rule: "Non-overlapping territories", desc: "ทุก Skill ต้องมีขอบเขตชัดเจน เช่น Brand Voice Enforcer = voice compliance เท่านั้น" },
+              { rule: "Aggressive negative boundaries", desc: "ทุก Skill ต้องเขียน negative boundaries ที่อ้างถึง territories ของ Skill อื่นๆ โดยตรง" },
+              { rule: "Distinctive trigger language", desc: "แต่ละ Skill ต้องมี trigger phrases ที่ unique เฉพาะตัว ถ้าใช้คำเดิม = Skill มีปัญหา scope" },
+            ].map((item, i) => (
+              <div key={i} style={{ background: "white", border: "1px solid #FDE68A", borderRadius: 12, padding: "16px" }}>
+                <div style={{ fontWeight: 800, color: "#F59E0B", fontSize: 14, marginBottom: 6 }}>Rule {i+1}: {item.rule}</div>
+                <div style={{ color: "#475569", fontSize: 13, lineHeight: 1.7 }}>{item.desc}</div>
+              </div>
+            ))}
+          </div>
+          <h4 style={{ color: "#F59E0B", marginBottom: 12, fontWeight: 800 }}>Prompt: Skill Conflict Auditor</h4>
+          <PromptBox color="#f59e0b">{`I have multiple Claude Skills deployed and experiencing conflicts 
+(wrong Skills firing, overlapping functionality).
+
+SKILL 1: [PASTE YAML DESCRIPTION]
+SKILL 2: [PASTE YAML DESCRIPTION]
+SKILL 3: [PASTE YAML DESCRIPTION]
+
+Run conflict analysis:
+## 1. TERRITORY MAP (Define each Skill's territory)
+## 2. TRIGGER PHRASE COLLISION TEST
+## 3. NEGATIVE BOUNDARY AUDIT
+## 4. AMBIGUOUS REQUEST TEST
+
+Present as structured report with priority-ranked fixes.`}</PromptBox>
+        </div>
+      )
+    },
+    {
+      title: "Reference Architecture — จัดการ Documents ขนาดใหญ่", color: "#a78bfa",
+      content: (
+        <div className="fade-in">
+          <p style={{ color: "#64748b", fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>เมื่อ Skill ต้องอ้างถึง brand guide 50 หน้า, style manual 30 หน้า, และ template library ต้องออกแบบ reference architecture ที่ดี ไม่งั้น Claude จะเสีย context window ไปโหลด reference ที่ไม่จำเป็น</p>
+          <h4 style={{ color: "#8B5CF6", marginBottom: 12, fontWeight: 800 }}>Prompt: Reference Architecture Designer</h4>
+          <PromptBox color="#a78bfa">{`I have a Claude Skill that needs to reference multiple large documents.
+I need help designing the reference file architecture.
+
+Documents my Skill needs:
+[LIST EACH WITH LENGTH AND PURPOSE]
+
+Design a reference architecture that:
+1. Splits large documents into focused sub-files (loadable independently)
+2. Creates "quick reference" version of each major document (under 30 lines)
+3. Writes conditional loading instructions for SKILL.md
+4. Ensures "one level deep" rule
+
+Output: Complete folder structure diagram and updated SKILL.md`}</PromptBox>
+        </div>
+      )
+    },
+  ];
+
+  return (
+    <div className="fade-in">
+      <Tag color="#34d399">🏗️ Module 2</Tag>
+      <h2 className="section-title" style={{ fontWeight: 800, margin: "8px 0 16px" }}>Architecture</h2>
+      <p style={{ color: "#64748b", fontSize: 15, lineHeight: 1.8, marginBottom: 32 }}>Scripts สำหรับ computation, Multi-skill orchestration ป้องกัน conflicts, และ Reference strategies ที่ scale ได้</p>
+      
+      <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+        {topics.map((topic, i) => (
+          <div key={i} className="premium-card" style={{ padding: 0, overflow: "hidden", border: `1px solid ${expanded === i ? topic.color : "#E2E8F0"}`, transition: "all 0.3s ease", boxShadow: expanded === i ? `0 8px 24px -8px ${topic.color}40` : "0 2px 4px rgba(0,0,0,0.02)" }}>
+            <div onClick={() => setExpanded(expanded === i ? null : i)} style={{ padding: "18px 20px", cursor: "pointer", display: "flex", alignItems: "center", gap: 16, background: expanded === i ? "#F8FAFC" : "white" }}>
+              <div style={{ width: 40, height: 40, borderRadius: 12, background: `${topic.color}15`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0 }}>
+                {["📜","🔀","📦"][i]}
+              </div>
+              <div style={{ fontWeight: 800, color: "#1E293B", fontSize: 16, flex: 1 }}>{topic.title}</div>
+              <span style={{ color: "#94a3b8", fontSize: 24, transform: expanded === i ? "rotate(90deg)" : "none", transition: "0.3s ease" }}>›</span>
+            </div>
+            {expanded === i && (
+              <div className="fade-in" style={{ padding: "0 20px 24px", paddingLeft: 76, background: "#F8FAFC" }}>
+                {topic.content}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function SkillsModule3() {
+  const [expanded, setExpanded] = useState(null);
+  const failures = [
+    { num: 1, name: "Silent Skill — ไม่ Fire เลย", color: "#f87171", icon: "🔇", cause: "YAML description คลุมเครือเกินไป Trigger phrases ไม่ตรงกับสิ่งที่พิมพ์", fix: "เพิ่ม trigger phrases ให้ aggressive ขึ้น เขียน description ให้ explicit กว่านี้" },
+    { num: 2, name: "Hijacker — Fire ผิด Request", color: "#fb923c", icon: "🏴‍☠️", cause: "Description กว้างเกินไป หรือ Negative Boundaries หายไป", fix: "เพิ่ม Negative Boundaries ที่ระบุ territories ของ Skill อื่นๆ ชัดๆ" },
+    { num: 3, name: "Drifter — Fire แต่ Output ผิด", color: "#fbbf24", icon: "🌊", cause: "Instructions คลุมเครือ มีความหมายได้หลายแบบ", fix: "แทน vague language ด้วย specific testable instructions ทุกบรรทัด" },
+    { num: 4, name: "Fragile Skill — ทำงานไม่ได้กับ Edge Cases", color: "#a78bfa", icon: "💔", cause: "Edge case handling ไม่ครบ ทดสอบแค่ ideal input", fix: "เพิ่ม explicit edge case instructions สำหรับทุก scenario ที่เป็นไปได้" },
+    { num: 5, name: "Overachiever — ทำเกินที่สั่ง", color: "#60a5fa", icon: "🎭", cause: "Instructions บอกว่าต้องทำอะไร แต่ไม่บอกว่าอะไรที่ห้ามทำ", fix: "เพิ่ม scope constraints: 'Output ONLY [specified format] and nothing else'" },
+  ];
+
+  return (
+    <div className="fade-in">
+      <Tag color="#f59e0b">🧪 Module 3</Tag>
+      <h2 className="section-title" style={{ fontWeight: 800, margin: "8px 0 16px" }}>Testing & Iteration</h2>
+      <p style={{ color: "#64748b", fontSize: 15, lineHeight: 1.8, marginBottom: 32 }}>ความแตกต่างระหว่าง Skill ที่ "พอใช้ได้" กับ Skill ที่ทำงานเหมือนพนักงานที่ฝึกแล้ว อยู่ที่ module นี้</p>
+
+      <h3 style={{ color: "#1E293B", fontWeight: 800, marginBottom: 16, fontSize: 20 }}>5 Failure Modes ที่ต้องรู้จัก</h3>
+      <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 32 }}>
+        {failures.map((f, i) => (
+          <div key={i} className="premium-card" style={{ padding: 0, overflow: "hidden", border: `1px solid ${expanded === i ? f.color : "#E2E8F0"}`, transition: "all 0.3s ease", boxShadow: expanded === i ? `0 8px 24px -8px ${f.color}40` : "0 2px 4px rgba(0,0,0,0.02)" }}>
+            <div onClick={() => setExpanded(expanded === i ? null : i)} style={{ padding: "18px 20px", cursor: "pointer", display: "flex", alignItems: "center", gap: 16, background: expanded === i ? "#F8FAFC" : "white" }}>
+              <span style={{ fontSize: 24 }}>{f.icon}</span>
+              <div style={{ flex: 1, fontWeight: 800, color: f.color, fontSize: 16 }}>
+                {f.name}
+              </div>
+              <span style={{ color: "#94a3b8", fontSize: 24, transform: expanded === i ? "rotate(90deg)" : "none", transition: "0.3s ease" }}>›</span>
+            </div>
+            {expanded === i && (
+              <div className="fade-in grid-auto-fit" style={{ padding: "0 20px 24px", paddingLeft: 60, background: "#F8FAFC", gap: 16 }}>
+                <div style={{ background: "white", border: "1px solid #FECACA", borderRadius: 10, padding: 16 }}>
+                  <div style={{ fontWeight: 800, color: "#EF4444", fontSize: 12, marginBottom: 8, letterSpacing: 1 }}>ROOT CAUSE</div>
+                  <div style={{ fontSize: 14, color: "#475569", lineHeight: 1.7 }}>{f.cause}</div>
+                </div>
+                <div style={{ background: "white", border: "1px solid #A7F3D0", borderRadius: 10, padding: 16 }}>
+                  <div style={{ fontWeight: 800, color: "#10B981", fontSize: 12, marginBottom: 8, letterSpacing: 1 }}>FIX</div>
+                  <div style={{ fontSize: 14, color: "#475569", lineHeight: 1.7 }}>{f.fix}</div>
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <Card color="#a78bfa" style={{ marginBottom: 32 }}>
+        <h3 style={{ color: "#8B5CF6", fontWeight: 800, marginBottom: 16, fontSize: 18 }}>🔬 Prompt: Failure Mode Diagnostic</h3>
+        <PromptBox color="#a78bfa">{`My Claude Skill is not working as expected. Help me diagnose 
+and fix the problem.
+
+Here is my complete SKILL.md: [PASTE YOUR SKILL.MD]
+
+What I typed: [EXACT REQUEST YOU MADE]
+What I expected: [EXPECTED BEHAVIOUR]
+What actually happened: [ACTUAL BEHAVIOUR]
+
+Diagnose against the 5 Failure Modes:
+1. Silent Skill — Is the YAML strong enough to match my request?
+2. Hijacker — Is the description too broad? Missing negative boundaries?
+3. Drifter — Are instructions ambiguous?
+4. Fragile Skill — Was my input an edge case not covered?
+5. Overachiever — Are scope constraints missing?
+
+For the identified failure mode:
+- Explain exactly what caused the failure
+- Provide the specific fix (corrected YAML or instruction)
+- Show corrected section of SKILL.md ready to paste
+- Suggest a test prompt to verify the fix works`}</PromptBox>
+      </Card>
+
+      <Card color="#34d399">
+        <h3 style={{ color: "#10B981", fontWeight: 800, marginBottom: 16, fontSize: 18 }}>📊 Professional Testing Tools (Skills 2.0)</h3>
+        <div className="grid-auto-fit">
+          {[
+            { name: "Evals", desc: "เขียน test prompts + define expected behavior → Pass/Fail grade ไม่ใช่แค่ 'ดูโอเค'", color: "#34d399" },
+            { name: "Benchmarks", desc: "Track pass rate, token consumption, และ speed ข้าม versions ดูว่า v3 ดีขึ้นจริงไหม", color: "#60a5fa" },
+            { name: "A/B Comparator", desc: "Blind test ระหว่าง 2 versions ของ instructions ข้อมูลจริงว่าตัวไหนชนะ", color: "#a78bfa" },
+            { name: "Description Optimiser", desc: "บอกว่า YAML triggers จะ fire ถูกต้องไหมเมื่อ users ask", color: "#f59e0b" },
+          ].map((tool, i) => (
+            <div key={i} style={{ background: "white", border: `1px solid ${tool.color}30`, borderRadius: 12, padding: 16 }}>
+              <div style={{ fontWeight: 800, color: tool.color, marginBottom: 8, fontSize: 15 }}>{tool.name}</div>
+              <div style={{ fontSize: 13, color: "#64748b", lineHeight: 1.7 }}>{tool.desc}</div>
+            </div>
+          ))}
+        </div>
+        <div style={{ marginTop: 24, background: "rgba(16,185,129,0.08)", borderRadius: 12, padding: 16, borderLeft: "4px solid #10B981" }}>
+          <div style={{ fontSize: 14, color: "#047857", fontWeight: 800, marginBottom: 4 }}>เกณฑ์พร้อม Production:</div>
+          <div style={{ fontSize: 14, color: "#475569" }}>Iterate จนกว่า 2 consecutive evaluation runs จะไม่มี significant improvement — นั่นคือสัญญาณว่า Skill พร้อม deploy จริงๆ</div>
+        </div>
+      </Card>
+    </div>
+  );
+}
+
+function SkillsModule4() {
+  return (
+    <div className="fade-in">
+      <Tag color="#ec4899">🚀 Module 4</Tag>
+      <h2 className="section-title" style={{ fontWeight: 800, margin: "8px 0 16px" }}>Production Deployment</h2>
+      <p style={{ color: "#64748b", fontSize: 15, lineHeight: 1.8, marginBottom: 32 }}>Skills ทำงานได้แล้ว ผ่านการทดสอบแล้ว ตอนนี้คำถามเปลี่ยนจาก "ทำงานได้ไหม?" เป็น "ทำงานได้ที่ scale ข้ามหลาย sessions ไหม?"</p>
+
+      <Card color="#ec4899" style={{ marginBottom: 32 }}>
+        <h3 style={{ color: "#EC4899", fontWeight: 800, marginBottom: 16, fontSize: 18 }}>🔄 State Management — ระบบ Shift Handover</h3>
+        <p style={{ color: "#475569", fontSize: 14, lineHeight: 1.8, marginBottom: 20 }}>เมื่อรัน Skill ข้าม sessions หลายครั้ง (เขียนหนังสือ, สร้าง app, manage project หลายสัปดาห์) context window เต็มและ Claude ลืมสิ่งที่ทำไปแล้ว</p>
+        
+        <div style={{ background: "#FDF2F8", border: "1px solid #FBCFE8", borderRadius: 12, padding: 20, marginBottom: 24 }}>
+          <div style={{ fontWeight: 800, color: "#DB2777", marginBottom: 12, fontSize: 15 }}>💡 วิธีแก้: เพิ่ม 1 instruction ใน SKILL.md</div>
+          <PromptBox color="#ec4899">{`"At the start of every session, read context-log.md to see 
+what we completed last time.
+
+At the end of every session, write a summary of what you 
+finished and what's still pending."
+
+# นั่นคือทั้งหมด Claude จะ:
+# 1. อ่าน notes จาก session ก่อนหน้า
+# 2. ทำงานต่อจากที่ค้างไว้
+# 3. บันทึก progress ไว้ให้ session หน้า`}</PromptBox>
+        </div>
+        <div style={{ background: "white", border: "1px solid #E2E8F0", borderRadius: 12, padding: 16 }}>
+          <div style={{ fontWeight: 800, color: "#475569", marginBottom: 6 }}>เปรียบเหมือน Hospital Shift Change</div>
+          <p style={{ color: "#64748b", fontSize: 14, lineHeight: 1.8 }}>หมอที่รับเวรอ่าน chart แล้วรู้ทันทีว่าเกิดอะไรขึ้น อะไรค้างอยู่ และต้องระวังอะไร AI ของคุณทำงานแบบเดียวกัน</p>
+        </div>
+      </Card>
+
+      <Card color="#60a5fa" style={{ marginBottom: 32 }}>
+        <h3 style={{ color: "#3B82F6", fontWeight: 800, marginBottom: 16, fontSize: 18 }}>📋 Production Checklist</h3>
+        <div style={{ display: "grid", gap: 12 }}>
+          {[
+            { check: "Skill ผ่าน 2 consecutive eval runs โดยไม่มี significant improvement", status: "test" },
+            { check: "context-log.md instruction เพิ่มใน SKILL.md แล้ว", status: "state" },
+            { check: "ทดสอบกับ worst-case inputs จริงๆ", status: "test" },
+            { check: "Negative boundaries ครอบคลุม Skill อื่นๆ ทั้งหมดที่มีอยู่", status: "arch" },
+            { check: "Scripts ทั้งหมด accept arguments และมี error handling", status: "code" },
+            { check: "Reference files ไม่เกิน one level deep", status: "arch" },
+          ].map((item, i) => (
+            <div key={i} style={{ display: "flex", gap: 12, padding: "12px 16px", background: "#F8FAFC", border: "1px solid #E2E8F0", borderRadius: 10, alignItems: "flex-start" }}>
+              <span style={{ color: "#10B981", fontWeight: 800, flexShrink: 0, fontSize: 16 }}>✓</span>
+              <span style={{ fontSize: 14, color: "#475569", lineHeight: 1.6 }}>{item.check}</span>
+            </div>
+          ))}
+        </div>
+      </Card>
+
+      <div style={{ background: "linear-gradient(135deg, rgba(236,72,153,0.08), rgba(124,58,237,0.08))", border: "1px solid rgba(236,72,153,0.2)", borderRadius: 20, padding: 32, textAlign: "center" }}>
+        <div style={{ fontSize: 40, marginBottom: 16 }}>🏁</div>
+        <h3 style={{ fontSize: 24, fontWeight: 800, color: "#1e1b4b", marginBottom: 12 }}>Skills Masterclass เสร็จสมบูรณ์</h3>
+        <p style={{ color: "#475569", fontSize: 16, lineHeight: 1.8, maxWidth: 600, margin: "0 auto 24px" }}>
+          คุณสามารถเปิด Claude ทุกเช้าแล้วพิมพ์คำสั่งเดิมซ้ำๆ ทุกวัน หรือจะใช้เวลา 10 นาทีตอนนี้ สร้าง Skill หนึ่งตัว แล้วไม่ต้องพิมพ์คำสั่งนั้นอีกเลย
+        </p>
+        <div style={{ background: "white", padding: "12px 24px", borderRadius: 30, display: "inline-block", fontWeight: 800, color: "#8B5CF6", boxShadow: "0 4px 12px rgba(139,92,246,0.15)" }}>
+          👉 เลือก 1 workflow ที่ทำซ้ำทุกสัปดาห์ → สร้าง Skill วันนี้
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ─── MAIN APP COMPONENT ───────────────────────────────────────────────────────
 export default function App() {
   const [activeSection, setActiveSection] = useState("roadmap");
   const [skillsTab, setSkillsTab] = useState("intro");
   const [expandedPractice, setExpandedPractice] = useState(null);
+  const [showAllPractices, setShowAllPractices] = useState(false);
   const [selectedLevel, setSelectedLevel] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [copiedIdx, setCopiedIdx] = useState(null);
@@ -760,6 +1056,9 @@ export default function App() {
   const currentIdx = navSections.findIndex(s => s.id === activeSection);
   const prevSection = currentIdx > 0 ? navSections[currentIdx - 1] : null;
   const nextSection = currentIdx < navSections.length - 1 ? navSections[currentIdx + 1] : null;
+
+  // Determine practices to show based on state
+  const visiblePractices = showAllPractices ? practices : practices.slice(0, 5);
 
   return (
     <div className="app-container">
@@ -898,15 +1197,15 @@ export default function App() {
 
       {/* ─── MOBILE BACKDROP & HEADER ─── */}
       <div className={`sidebar-backdrop ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(false)} />
-
+      
       <div className="mobile-header">
         <div style={{ fontWeight: 800, fontSize: 16 }} className="text-gradient">Claude Masterclass</div>
-        <button onClick={() => setMenuOpen(true)} style={{
-          background: "white", border: "1px solid #E2E8F0", borderRadius: 8,
+        <button onClick={() => setMenuOpen(true)} style={{ 
+          background: "white", border: "1px solid #E2E8F0", borderRadius: 8, 
           width: 36, height: 36, display: "flex", alignItems: "center", justifyContent: "center",
           boxShadow: "0 2px 4px rgba(0,0,0,0.05)", cursor: "pointer"
         }}>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
 
@@ -930,7 +1229,7 @@ export default function App() {
           <button className="glass-btn hover-lift float-btn" onClick={() => scrollTo(prevSection.id)}
             style={{ background: "rgba(255,255,255,0.9)", border: "1px solid #E2E8F0", borderRadius: "50%", width: 48, height: 48, display: "flex", alignItems: "center", justifyContent: "center", color: "var(--text-muted)", boxShadow: "var(--shadow-glass)" }}
             title={`กลับไป ${prevSection.label}`}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 19V5M5 12l7-7 7 7" /></svg>
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
           </button>
         )}
         <div style={{ display: "flex", gap: 12 }}>
@@ -938,7 +1237,7 @@ export default function App() {
             <button className="premium-btn float-btn-text glass-btn" onClick={() => scrollTo(nextSection.id)}
               style={{ borderRadius: 24, padding: "12px 20px", display: "flex", alignItems: "center", gap: 8, boxShadow: "var(--shadow-md)" }}>
               {nextSection.icon} ไปยัง {nextSection.label}
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           )}
         </div>
@@ -946,7 +1245,7 @@ export default function App() {
 
       {/* ─── MAIN CONTENT ─── */}
       <main className="main-wrap" style={{ marginLeft: 260, padding: "0 64px 100px", maxWidth: 1200 }}>
-
+        
         {/* HERO */}
         <section id="hero" style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", paddingTop: 40, paddingBottom: 60 }}>
           {/* SVG Container responsive */}
@@ -957,24 +1256,24 @@ export default function App() {
           <div style={{ textAlign: "center", maxWidth: 800, margin: "0 auto" }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "6px 16px", borderRadius: 30, fontSize: 13, fontWeight: 700, border: "1px solid rgba(124,58,237,0.2)", background: "rgba(124,58,237,0.05)", color: "var(--primary)", marginBottom: 24 }}>
               <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--primary)", display: "inline-block" }} />
-              อัปเดตล่าสุด: เนื้อหาสำหรับ Claude 3.5 & Cowork
+              อัปเดตล่าสุด: เนื้อหาสำหรับ Claude 4.6 & Cowork
             </div>
-
+            
             <h1 className="hero-title" style={{ marginBottom: 24 }}>
               เรียนรู้การใช้ Claude<br />
               <span className="text-gradient">ทำงานแทนคุณแบบ 100%</span>
             </h1>
-
+            
             <p style={{ fontSize: "clamp(16px, 2vw, 18px)", color: "var(--text-muted)", lineHeight: 1.8, marginBottom: 40, maxWidth: 600, margin: "0 auto 40px" }}>
               จาก Prompt พื้นฐาน สู่การสร้าง AI Agent ส่วนตัว นี่คือ Masterclass ที่จะเปลี่ยนคุณจากผู้ใช้งาน เป็น <strong style={{ color: "var(--text-dark)" }}>ผู้ควบคุม AI อย่างแท้จริง</strong>
             </p>
-
+            
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
               <button className="premium-btn" onClick={() => scrollTo("roadmap")}>
                 เริ่มเรียนตาม Roadmap 🚀
               </button>
-              <button className="outline-btn" onClick={() => scrollTo("use-cases")}>
-                ดูตัวอย่างใช้งานจริง 💼
+              <button className="outline-btn" onClick={() => scrollTo("how-to")}>
+                สรุปวิธีใช้ฉบับรวบรัด 💡
               </button>
             </div>
           </div>
@@ -995,8 +1294,8 @@ export default function App() {
               return (
                 <div key={lvl.level} onClick={() => setSelectedLevel(isSelected ? null : lvl.level)}
                   className="hover-lift"
-                  style={{
-                    background: isSelected ? `${lvl.color}05` : "white",
+                  style={{ 
+                    background: isSelected ? `${lvl.color}05` : "white", 
                     border: `2px solid ${isSelected ? lvl.color : "transparent"}`,
                     boxShadow: isSelected ? `0 10px 30px -10px ${lvl.color}40` : "var(--shadow-sm)",
                     borderRadius: 20, padding: 24, cursor: "pointer", position: "relative",
@@ -1022,17 +1321,17 @@ export default function App() {
 
           {/* Selected Message */}
           {selectedLevel && (
-            <div className="fade-in premium-card" style={{ background: `linear-gradient(to right, ${userLevels[selectedLevel - 1].color}10, transparent)`, borderColor: `${userLevels[selectedLevel - 1].color}30`, marginBottom: 40 }}>
-              <h4 style={{ color: userLevels[selectedLevel - 1].color, fontSize: 18, fontWeight: 800, marginBottom: 8 }}>ยอดเยี่ยมเลยค่ะ!</h4>
-              <p style={{ color: "#334155", fontSize: 15, lineHeight: 1.7 }}>
-                สำหรับคุณที่อยู่ <strong style={{ color: userLevels[selectedLevel - 1].color }}>Level {selectedLevel}</strong> Geni แนะนำให้เริ่มเจาะลึกที่: {userLevels[selectedLevel - 1].nextStep}
-              </p>
+            <div className="fade-in premium-card" style={{ background: `linear-gradient(to right, ${userLevels[selectedLevel-1].color}10, transparent)`, borderColor: `${userLevels[selectedLevel-1].color}30`, marginBottom: 40 }}>
+               <h4 style={{ color: userLevels[selectedLevel-1].color, fontSize: 18, fontWeight: 800, marginBottom: 8 }}>ยอดเยี่ยมเลยค่ะ!</h4>
+               <p style={{ color: "#334155", fontSize: 15, lineHeight: 1.7 }}>
+                  สำหรับคุณที่อยู่ <strong style={{color: userLevels[selectedLevel-1].color}}>Level {selectedLevel}</strong> Geni แนะนำให้เริ่มเจาะลึกที่: {userLevels[selectedLevel-1].nextStep}
+               </p>
             </div>
           )}
 
           <h3 style={{ fontWeight: 800, fontSize: 20, marginBottom: 24, color: "#1E293B" }}>📍 เส้นทาง 10 ขั้นตอนที่แนะนำ</h3>
           <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-            {[1, 2, 3, 4].map(lvl => {
+            {[1,2,3,4].map(lvl => {
               const lvlInfo = userLevels.find(l => l.level === lvl);
               const steps = roadmapSteps.filter(s => s.level === lvl);
               return (
@@ -1085,20 +1384,20 @@ export default function App() {
                   <h3 style={{ fontWeight: 800, fontSize: 18, color: "#1E293B" }}>{item.title}</h3>
                 </div>
                 <p style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.7, marginBottom: 20, flex: 1 }}>{item.desc}</p>
-
+                
                 <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                   {/* Prompt Box */}
                   <div style={{ background: "#F8FAFC", border: "1px solid #E2E8F0", borderLeft: `3px solid ${item.color}`, borderRadius: 8, padding: "12px 14px" }}>
                     <div style={{ fontSize: 11, fontWeight: 800, color: item.color, marginBottom: 6, letterSpacing: 0.5 }}>ลอง PROMPT แบบนี้:</div>
                     <div style={{ fontSize: 13, color: "#475569", fontStyle: "italic", lineHeight: 1.6 }}>{item.prompt}</div>
                   </div>
-
+                  
                   {/* Pro Tip Box */}
                   <div style={{ background: "#ECFDF5", border: "1px solid #A7F3D0", borderRadius: 8, padding: "12px 14px" }}>
                     <div style={{ fontSize: 11, fontWeight: 800, color: "#059669", marginBottom: 6, letterSpacing: 0.5 }}>💡 PRO TIP:</div>
                     <div style={{ fontSize: 13, color: "#047857", lineHeight: 1.6 }}>{item.tip}</div>
                   </div>
-
+                  
                   {/* Common Mistake Box */}
                   <div style={{ background: "#FEF2F2", border: "1px solid #FECACA", borderRadius: 8, padding: "12px 14px" }}>
                     <div style={{ fontSize: 11, fontWeight: 800, color: "#DC2626", marginBottom: 6, letterSpacing: 0.5 }}>⚠️ COMMON MISTAKE:</div>
@@ -1110,7 +1409,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* SKILLS MASTERCLASS (Tabs converted to scrollable pills for mobile) */}
+        {/* SKILLS MASTERCLASS */}
         <section id="skills-masterclass" style={{ paddingTop: 80 }}>
           <div style={{ marginBottom: 32 }}>
             <Tag color="#60a5fa">⚡ Skills Masterclass</Tag>
@@ -1121,7 +1420,7 @@ export default function App() {
           <div style={{ display: "flex", gap: 12, overflowX: "auto", paddingBottom: 16, WebkitOverflowScrolling: "touch", margin: "0 -20px 24px", paddingLeft: 20, paddingRight: 20 }}>
             {skillsModules.map((m) => (
               <button key={m.id} onClick={() => setSkillsTab(m.id)}
-                style={{
+                style={{ 
                   whiteSpace: "nowrap", padding: "10px 20px", borderRadius: 24, fontSize: 14, fontWeight: 700, cursor: "pointer", transition: "all 0.2s",
                   border: `1px solid ${skillsTab === m.id ? m.color : "var(--border-color)"}`,
                   background: skillsTab === m.id ? m.color : "white",
@@ -1133,7 +1432,7 @@ export default function App() {
             ))}
           </div>
 
-          <div className="premium-card fade-in" style={{ padding: "32px 24px" }}>
+          <div className="premium-card fade-in" style={{ padding: "32px 24px", minHeight: 400 }}>
             {skillsTab === "intro" && <SkillsIntro />}
             {skillsTab === "m1" && <SkillsModule1 />}
             {skillsTab === "m2" && <SkillsModule2 />}
@@ -1147,11 +1446,11 @@ export default function App() {
           <div className="svg-wrapper" style={{ width: "100%", borderRadius: 24, overflow: "hidden", marginBottom: 32, background: "#0F172A", boxShadow: "var(--shadow-md)" }}>
             <SvgCowork />
           </div>
-
+          
           <div style={{ textAlign: "center", marginBottom: 40 }}>
-            <Tag color="#a78bfa">🤖 Cowork</Tag>
-            <h2 className="section-title">Claude Cowork คืออะไร?</h2>
-            <p style={{ color: "var(--text-muted)", marginTop: 12, fontSize: 16 }}>ก้าวข้าม Chatbot สู่ AI ที่ลงมือ "ทำงาน" แทนคุณจริงๆ ค่ะ</p>
+             <Tag color="#a78bfa">🤖 Cowork</Tag>
+             <h2 className="section-title">Claude Cowork คืออะไร?</h2>
+             <p style={{ color: "var(--text-muted)", marginTop: 12, fontSize: 16 }}>ก้าวข้าม Chatbot สู่ AI ที่ลงมือ "ทำงาน" แทนคุณจริงๆ ค่ะ</p>
           </div>
 
           <div className="grid-auto-fit">
@@ -1172,9 +1471,9 @@ export default function App() {
                 <h3 style={{ fontWeight: 800, color: "#047857", fontSize: 18 }}>Claude Cowork</h3>
               </div>
               <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12, color: "#0F172A", fontWeight: 500 }}>
-                <li><span style={{ color: "#10B981", marginRight: 8 }}>✓</span> อ่าน/เขียนไฟล์ในคอมคุณได้ตรงๆ</li>
-                <li><span style={{ color: "#10B981", marginRight: 8 }}>✓</span> เชื่อมต่อ Google Drive, Notion, Slack ได้</li>
-                <li><span style={{ color: "#10B981", marginRight: 8 }}>✓</span> ทำงานอัตโนมัติตั้งแต่ต้นจนจบ คุณแค่รอตรวจงาน</li>
+                <li><span style={{color:"#10B981", marginRight: 8}}>✓</span> อ่าน/เขียนไฟล์ในคอมคุณได้ตรงๆ</li>
+                <li><span style={{color:"#10B981", marginRight: 8}}>✓</span> เชื่อมต่อ Google Drive, Notion, Slack ได้</li>
+                <li><span style={{color:"#10B981", marginRight: 8}}>✓</span> ทำงานอัตโนมัติตั้งแต่ต้นจนจบ คุณแค่รอตรวจงาน</li>
               </ul>
             </Card>
           </div>
@@ -1231,14 +1530,14 @@ export default function App() {
             ))}
           </div>
           <div className="grid-auto-fit">
-            <Card color="#a78bfa">
+             <Card color="#a78bfa">
               <h3 style={{ color: "#8B5CF6", marginBottom: 12, fontWeight: 800, fontSize: 16 }}>🤖 AskUserQuestion</h3>
               <PromptBox color="#a78bfa">{`I want to [TASK] to [SUCCESS CRITERIA].\nFirst, explore my CLAUDE COWORK folder.\nThen, ask me questions using the AskUserQuestion tool.\nI want to refine the approach with you before you execute.`}</PromptBox>
-            </Card>
-            <Card color="#34d399">
+             </Card>
+             <Card color="#34d399">
               <h3 style={{ color: "#10B981", marginBottom: 12, fontWeight: 800, fontSize: 16 }}>⚡ Autonomous Mode</h3>
               <PromptBox color="#34d399">{`Complete this task autonomously.\nOnly stop and ask me if you hit something you genuinely\ncannot resolve without my input.\nOtherwise deliver the finished result.`}</PromptBox>
-            </Card>
+             </Card>
           </div>
         </section>
 
@@ -1292,9 +1591,9 @@ export default function App() {
           </div>
           <div className="grid-auto-fit">
             {[
-              { title: "1. Connectors", path: "Customize → Connectors", icon: "🔌", color: "#a78bfa", desc: "เชื่อม Cowork กับเครื่องมือที่ใช้อยู่ Slack, Notion, Gmail, Google Calendar ใช้เวลา 20 นาที ประหยัดหลายชั่วโมงต่อสัปดาห์", apps: ["Slack", "Notion", "Gmail", "Google Drive", "Asana", "Figma"] },
-              { title: "2. Skills", path: "Customize → Skills", icon: "⚡", color: "#60a5fa", desc: "ชุดคำสั่งที่ใช้ซ้ำได้ Prompt ที่ใช้บ่อย → เปลี่ยนเป็น Skill สร้างโดยแค่อธิบาย workflow ให้ Claude ฟัง", apps: ["Custom workflows", "Repeatable tasks", "Brand templates", "SOPs"] },
-              { title: "3. Plug-ins", path: "Customize → Plug-ins", icon: "🧩", color: "#34d399", desc: "รวมหลาย Skills เป็น 'บทบาท' Anthropic มีให้แล้ว 12 แบบ Marketing, Finance, Legal, Sales, Data Analysis", apps: ["Marketing", "Finance", "Legal", "Sales", "Data Analysis"] },
+              { title: "1. Connectors", path: "Customize → Connectors", icon: "🔌", color: "#a78bfa", desc: "เชื่อม Cowork กับเครื่องมือที่ใช้อยู่ Slack, Notion, Gmail, Google Calendar ใช้เวลา 20 นาที ประหยัดหลายชั่วโมงต่อสัปดาห์", apps: ["Slack","Notion","Gmail","Google Drive","Asana","Figma"] },
+              { title: "2. Skills", path: "Customize → Skills", icon: "⚡", color: "#60a5fa", desc: "ชุดคำสั่งที่ใช้ซ้ำได้ Prompt ที่ใช้บ่อย → เปลี่ยนเป็น Skill สร้างโดยแค่อธิบาย workflow ให้ Claude ฟัง", apps: ["Custom workflows","Repeatable tasks","Brand templates","SOPs"] },
+              { title: "3. Plug-ins", path: "Customize → Plug-ins", icon: "🧩", color: "#34d399", desc: "รวมหลาย Skills เป็น 'บทบาท' Anthropic มีให้แล้ว 12 แบบ Marketing, Finance, Legal, Sales, Data Analysis", apps: ["Marketing","Finance","Legal","Sales","Data Analysis"] },
             ].map((item, i) => (
               <Card key={i} color={item.color} className="hover-lift">
                 <div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 16 }}>
@@ -1313,7 +1612,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* BEST PRACTICES - Using Accordion Style for Mobile */}
+        {/* BEST PRACTICES - FIX: View All 17 Items */}
         <section id="best-practices" style={{ paddingTop: 80 }}>
           <div style={{ marginBottom: 32 }}>
             <Tag color="#F59E0B">🏆 Best Practices</Tag>
@@ -1322,9 +1621,9 @@ export default function App() {
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            {practices.slice(0, 5).map((p, i) => ( // Showing only top 5 for brevity, can render all
-              <div key={i} className="premium-card" style={{ padding: "0", cursor: "pointer", overflow: "hidden" }} onClick={() => setExpandedPractice(expandedPractice === i ? null : i)}>
-                <div style={{ padding: "20px", display: "flex", alignItems: "center", gap: 16, background: expandedPractice === i ? "#F8FAFC" : "white" }}>
+            {visiblePractices.map((p, i) => ( 
+              <div key={i} className="premium-card" style={{ padding: "0", cursor: "pointer", overflow: "hidden" }}>
+                <div onClick={() => setExpandedPractice(expandedPractice === i ? null : i)} style={{ padding: "20px", display: "flex", alignItems: "center", gap: 16, background: expandedPractice === i ? "#F8FAFC" : "white" }}>
                   <div style={{ width: 40, height: 40, borderRadius: 12, background: `${p.color}15`, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: 16, color: p.color, flexShrink: 0 }}>{p.num}</div>
                   <div style={{ flex: 1 }}>
                     <div style={{ fontWeight: 800, fontSize: 16, color: "#1E293B", marginBottom: 4 }}>{p.title}</div>
@@ -1339,8 +1638,16 @@ export default function App() {
                 )}
               </div>
             ))}
+            
+            {/* Toggle Show All Button */}
             <div style={{ textAlign: "center", marginTop: 16 }}>
-              <button className="outline-btn">ดูทั้งหมด 17 ข้อ</button>
+               <button 
+                  className="outline-btn" 
+                  onClick={() => setShowAllPractices(!showAllPractices)}
+                  style={{ display: "inline-flex", alignItems: "center", gap: 8 }}
+               >
+                  {showAllPractices ? "ซ่อนเนื้อหา ⬆️" : "ดูทั้งหมด 17 ข้อ 👇"}
+               </button>
             </div>
           </div>
         </section>
@@ -1468,7 +1775,7 @@ Examples: newsletter_v1.md / client-brief_v2.docx
           </Card>
         </section>
 
-        {/* USE CASES & INCOME (Combined for brevity but retaining structure) */}
+        {/* USE CASES & INCOME */}
         <section id="use-cases" style={{ paddingTop: 80 }}>
           <div className="svg-wrapper" style={{ width: "100%", borderRadius: 24, overflow: "hidden", marginBottom: 32, background: "#0F172A", boxShadow: "var(--shadow-md)" }}>
             <SvgUseCases />
@@ -1516,7 +1823,7 @@ Examples: newsletter_v1.md / client-brief_v2.docx
                 </div>
                 <p style={{ color: "var(--text-muted)", fontSize: 14, marginBottom: 16, lineHeight: 1.6 }}>{wf.desc}</p>
                 <div style={{ flex: 1 }}>
-                  <PromptBox color={wf.color}>{wf.prompt}</PromptBox>
+                   <PromptBox color={wf.color}>{wf.prompt}</PromptBox>
                 </div>
               </Card>
             ))}
@@ -1559,22 +1866,22 @@ Examples: newsletter_v1.md / client-brief_v2.docx
             <h2 className="section-title">Claude = ติวเตอร์ส่วนตัวระดับ Harvard</h2>
             <p style={{ color: "var(--text-muted)", marginTop: 12, fontSize: 16 }}>3 วิธีเปลี่ยน Claude เป็น personal tutor ที่ดีที่สุดในโลก</p>
           </div>
-
+          
           <div className="grid-auto-fit">
             {[
               { title: "1. Learning Style", color: "#38bdf8", desc: "เปิด 'Use Style' -> 'Learning' ให้ Claude สอนแบบ Socratic Method ถามกลับและเช็คความเข้าใจ" },
               { title: "2. Claude Skills", color: "#a78bfa", desc: "สร้าง Skill เป็น Tutor ประจำตัว ให้รู้ระดับของเราและติดตาม Progress ต่อเนื่อง" },
               { title: "3. Udemy Business Connector", color: "#34d399", desc: "เชื่อมต่อ Udemy ดึงเนื้อหาคอร์สมาสรุปและสร้าง Quiz ทบทวนได้โดยตรง" },
             ].map((method, i) => (
-              <Card key={i} color={method.color} className="hover-lift">
-                <h3 style={{ fontWeight: 800, color: method.color, fontSize: 18, marginBottom: 12 }}>{method.title}</h3>
-                <p style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.7 }}>{method.desc}</p>
-              </Card>
+               <Card key={i} color={method.color} className="hover-lift">
+                  <h3 style={{ fontWeight: 800, color: method.color, fontSize: 18, marginBottom: 12 }}>{method.title}</h3>
+                  <p style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.7 }}>{method.desc}</p>
+               </Card>
             ))}
           </div>
         </section>
 
-        {/* RESOURCES */}
+        {/* RESOURCES - EXPANDED */}
         <section id="resources" style={{ paddingTop: 80 }}>
           <div className="svg-wrapper" style={{ width: "100%", borderRadius: 24, overflow: "hidden", marginBottom: 32, background: "#0F172A", boxShadow: "var(--shadow-md)" }}>
             <SvgResources />
@@ -1582,6 +1889,7 @@ Examples: newsletter_v1.md / client-brief_v2.docx
           <div style={{ textAlign: "center", marginBottom: 40 }}>
             <Tag color="#60a5fa">📚 Resources</Tag>
             <h2 className="section-title">แหล่งเรียนรู้ — ไปต่อจากนี้</h2>
+            <p style={{ color: "var(--text-muted)", marginTop: 12, fontSize: 16 }}>รวม 7 แหล่งข้อมูลระดับ Top ของ Claude ที่ผู้ใช้ทุกคนควร Bookmark ไว้ค่ะ</p>
           </div>
           <div className="grid-auto-fit">
             <Card color="#a78bfa" className="hover-lift">
@@ -1666,6 +1974,7 @@ Examples: newsletter_v1.md / client-brief_v2.docx
               <a href="https://github.com/anthropics/knowledge-work-plugins" target="_blank" rel="noopener noreferrer" style={{ color: "#F97316", fontWeight: 700, textDecoration: "none" }}>ดูข้อมูลเพิ่มเติม →</a>
             </Card>
           </div>
+          </div>
         </section>
 
         {/* RUBEN GUIDE */}
@@ -1697,9 +2006,19 @@ Examples: newsletter_v1.md / client-brief_v2.docx
             Geni แนะนำให้เลือก 1 Workflow ที่ทำบ่อยที่สุดในสัปดาห์นี้ แล้วลองให้ Claude ช่วยจัดการดูค่ะ
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <button className="premium-btn" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <button className="premium-btn" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
               กลับขึ้นด้านบน ⬆️
             </button>
+          </div>
+          
+          {/* Credit & Contact */}
+          <div style={{ marginTop: 40, paddingTop: 20, borderTop: "1px solid var(--border-color)", color: "var(--text-muted)", fontSize: 14, lineHeight: 1.8 }}>
+            <p>รวบรวมโดย <strong style={{ color: "var(--text-dark)" }}>modty.ai (ศศิวรรณ จันทร์แดง)</strong></p>
+            <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "12px 24px", marginTop: 8, fontSize: 13 }}>
+              <span>🟢 <strong style={{ color: "var(--text-dark)" }}>LINE ID:</strong> 237dhtqp</span>
+              <span>📱 <strong style={{ color: "var(--text-dark)" }}>TIKTOK/FACEBOOK/IG:</strong> modty.ai</span>
+              <span>🌐 <strong style={{ color: "var(--text-dark)" }}>Website:</strong> <a href="https://modgoscale.framer.ai/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--primary)", textDecoration: "none", fontWeight: 700 }}>https://modgoscale.framer.ai/</a></span>
+            </div>
           </div>
         </footer>
 
