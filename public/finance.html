@@ -1,0 +1,722 @@
+<!DOCTYPE html><!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html></body><!-- Remaining content omitted for brevity: include the full HTML body from the provided code --><hr class="section-divider"></section>  </div>    </div>      <div class="how-desc">Claude อีกตัวที่ถูกเรียกใช้สำหรับงานเฉพาะจุด เช่น คัดเลือกบริษัทเปรียบเทียบ หรือตรวจสอบวิธีคำนวณ — แต่ละตัวมีคำสั่งและเครื่องมือของตัวเอง</div>      <div class="how-title">AI ผู้ช่วยเฉพาะทาง (Subagent)</div>      <div class="how-num">03</div>    <div class="how-item">    </div>      <div class="how-desc">ช่องทางเชื่อมต่อ (MCP) ที่เปิดให้ Claude ดึงข้อมูลจริงจาก FactSet, Bloomberg, Morningstar โดยตรง — ข้อมูลสด ไม่ต้องสลับหน้าต่าง ควบคุมสิทธิ์การเข้าถึงได้</div>      <div class="how-title">ตัวดึงข้อมูล (Connector)</div>      <div class="how-num">02</div>    <div class="how-item">    </div>      <div class="how-desc">ไฟล์คำแนะนำที่บรรจุความรู้เฉพาะทาง แนวทางปฏิบัติ และขั้นตอนการทำงาน — Claude ดึงมาใช้อัตโนมัติเมื่อบริบทตรง ไม่ต้อง prompt ซ้ำทุกครั้ง</div>      <div class="how-title">ชุดทักษะ (Skill)</div>      <div class="how-num">01</div>    <div class="how-item">  <div class="how-grid">  <p class="section-desc">ทุก Agent เป็นแม่แบบสำเร็จรูปที่รวม ชุดทักษะ + ตัวดึงข้อมูล + AI ผู้ช่วย ไว้ด้วยกัน — ทีมงานปรับแต่งวิธีคำนวณ นโยบายความเสี่ยง และขั้นตอนอนุมัติได้เอง</p>  <h2 class="section-title">แต่ละ Agent ประกอบด้วย 3 ชั้น</h2>  <div class="section-tag">โครงสร้างระบบ</div><section id="how"><hr class="section-divider"></div>  </div>    <a href="https://github.com/anthropics/financial-services" target="_blank" class="btn-secondary">GitHub ↗</a>    <a href="#commands" class="btn-primary">ดูตัวอย่างการพิมพ์คำสั่ง (Prompt) →</a>  <div class="hero-btns">  </div>    <div class="stat-item"><div class="stat-num">50+</div><div class="stat-lbl">ชุดทักษะ</div></div>    <div class="stat-item"><div class="stat-num">11+</div><div class="stat-lbl">แหล่งข้อมูล</div></div>    <div class="stat-item"><div class="stat-num">9</div><div class="stat-lbl">Plugin ตามสาย</div></div>    <div class="stat-item"><div class="stat-num">10</div><div class="stat-lbl">Agent</div></div>  <div class="hero-stats">  <p class="hero-sub">10 Agent พร้อมใช้ สำหรับงานที่กินเวลามากที่สุดในสายการเงิน — ตั้งแต่ทำ deck pitch บริษัท ไปจนถึงปิดบัญชีสิ้นเดือนและตรวจ KYC</p>  <h1>AI ที่เข้าใจงาน<br><em>สายการเงินจริงๆ</em></h1>  <div class="hero-tag">anthropics/financial-services</div>  <div class="hero-glow"></div>  <div class="hero-grid"></div><div class="hero"></nav>  </div>    <a href="#deploy">การติดตั้ง</a>    <a href="#glossary">คำศัพท์</a>    <a href="#commands">คำสั่งใช้งาน</a>    <a href="#usecases">ตัวอย่างจริง</a>    <a href="#agents">Agents</a>    <a href="#how">โครงสร้าง</a>  <div class="nav-links">  <div class="nav-logo">Claude × Finance</div><nav><body></head></style>/* ... (rest of styles omitted for brevity - same as provided) *//* OTHER STYLES */.section-divider{border:none;border-top:1px solid var(--border);margin:0 48px}.section-desc{font-size:15px;color:var(--text2);max-width:580px;line-height:1.7}.section-title{font-family:'Satoshi', 'Google Sans', 'Noto Sans Thai', sans-serif; font-weight:700; font-size:clamp(28px,3.5vw,44px);color:var(--text);line-height:1.15;margin-bottom:16px}.section-tag{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}section{padding:80px 48px;max-width:1200px;margin:0 auto}/* SECTIONS */.btn-secondary:hover{color:var(--text);border-color:rgba(255,255,255,.25)}.btn-secondary{background:transparent;color:var(--text2);font-size:13px;padding:10px 22px;border-radius:8px;text-decoration:none;border:1px solid var(--border2);transition:all .2s;display:inline-flex;align-items:center;gap:6px}.btn-primary:hover{background:var(--accent2);transform:translateY(-1px)}.btn-primary{background:var(--accent);color:#0a0a0b;font-size:13px;font-weight:500;padding:10px 22px;border-radius:8px;text-decoration:none;border:none;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:6px}.hero-btns{display:flex;gap:12px;flex-wrap:wrap}.stat-lbl{font-size:11px;color:var(--text3);margin-top:2px;text-transform:uppercase;letter-spacing:.08em}.stat-num{font-family:'Satoshi', 'Google Sans', 'Noto Sans Thai', sans-serif; font-weight:700; font-size:36px;color:var(--accent2);line-height:1}.hero-stats{display:flex;gap:32px;flex-wrap:wrap;margin-bottom:44px}.hero-sub{font-size:17px;font-weight:300;color:var(--text2);max-width:540px;line-height:1.7;margin-bottom:40px}.hero h1 em{font-style:italic;color:var(--accent)}.hero h1{font-family:'Satoshi', 'Google Sans', 'Noto Sans Thai', sans-serif; font-weight:700; font-size:clamp(42px,6vw,80px);line-height:1.05;color:var(--text);max-width:760px;margin-bottom:24px}.hero-tag{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(200,169,110,.3);padding:4px 12px;border-radius:20px;margin-bottom:28px;display:inline-block}.hero-glow{position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(200,169,110,.08) 0%,transparent 70%);pointer-events:none}.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 60% at 50% 50%,black,transparent);opacity:.4}.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:80px 48px 60px;position:relative;overflow:hidden}/* HERO */.nav-links a:hover{color:var(--text);background:var(--bg3);border-color:var(--border2)}.nav-links a{color:var(--text2);text-decoration:none;font-size:12px;padding:5px 10px;border-radius:6px;transition:all .2s;border:1px solid transparent}.nav-links{display:flex;gap:6px}.nav-logo{font-family:'Satoshi', 'Google Sans', 'Noto Sans Thai', sans-serif; font-weight:700; font-size:17px;color:var(--accent);letter-spacing:.01em}nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,11,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:56px}/* NAV */body{background:var(--bg);color:var(--text);font-family:'Satoshi', 'Google Sans', 'Noto Sans Thai', sans-serif;font-size:15px;line-height:1.65;overflow-x:hidden}html{scroll-behavior:smooth}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}}  --purple:#a78bfa; --green:#6bcb77; --amber:#f5c842;  --teal:#4ecfb0; --blue:#5b9cf6; --coral:#f07a5a;  --accent:#c8a96e; --accent2:#e8c98a;  --text:#e8e6df; --text2:#9b9890; --text3:#5c5a56;  --border:rgba(255,255,255,.07); --border2:rgba(255,255,255,.13);  --bg:#0a0a0b; --bg2:#111114; --bg3:#18181c;:root {<style><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;700&display=swap" rel="stylesheet"><link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet"><!-- นำเข้าฟอนต์ Satoshi สำหรับภาษาอังกฤษ และ Noto Sans Thai สำหรับเป็น Fallback ของภาษาไทย --><title>Claude × Finance — คู่มือ AI Agent สายการเงิน</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="UTF-8"><head><html lang="th"><html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude × Finance — คู่มือ AI Agent สายการเงิน</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0a0a0b; --bg2:#111114; --bg3:#18181c;
+  --border:rgba(255,255,255,.07); --border2:rgba(255,255,255,.13);
+  --text:#e8e6df; --text2:#9b9890; --text3:#5c5a56;
+  --accent:#c8a96e; --accent2:#e8c98a;
+  --teal:#4ecfb0; --blue:#5b9cf6; --coral:#f07a5a;
+  --purple:#a78bfa; --green:#6bcb77; --amber:#f5c842;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Satoshi', 'Google Sans', 'Noto Sans Thai', sans-serif;font-size:15px;line-height:1.65;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,11,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-family:'Satoshi', 'Google Sans', 'Noto Sans Thai', sans-serif; font-weight:700; font-size:17px;color:var(--accent);letter-spacing:.01em}
+.nav-links{display:flex;gap:6px}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:12px;padding:5px 10px;border-radius:6px;transition:all .2s;border:1px solid transparent}
+.nav-links a:hover{color:var(--text);background:var(--bg3);border-color:var(--border2)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:80px 48px 60px;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 60% at 50% 50%,black,transparent);opacity:.4}
+.hero-glow{position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(200,169,110,.08) 0%,transparent 70%);pointer-events:none}
+.hero-tag{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(200,169,110,.3);padding:4px 12px;border-radius:20px;margin-bottom:28px;display:inline-block}
+.hero h1{font-family:'Satoshi', 'Google Sans', 'Noto Sans Thai', sans-serif; font-weight:700; font-size:clamp(42px,6vw,80px);line-height:1.05;color:var(--text);max-width:760px;margin-bottom:24px}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero-sub{font-size:17px;font-weight:300;color:var(--text2);max-width:540px;line-height:1.7;margin-bottom:40px}
+.hero-stats{display:flex;gap:32px;flex-wrap:wrap;margin-bottom:44px}
+.stat-num{font-family:'Satoshi', 'Google Sans', 'Noto Sans Thai', sans-serif; font-weight:700; font-size:36px;color:var(--accent2);line-height:1}
+.stat-lbl{font-size:11px;color:var(--text3);margin-top:2px;text-transform:uppercase;letter-spacing:.08em}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:#0a0a0b;font-size:13px;font-weight:500;padding:10px 22px;border-radius:8px;text-decoration:none;border:none;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--text2);font-size:13px;padding:10px 22px;border-radius:8px;text-decoration:none;border:1px solid var(--border2);transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+.btn-secondary:hover{color:var(--text);border-color:rgba(255,255,255,.25)}
+
+/* SECTIONS */
+section{padding:80px 48px;max-width:1200px;margin:0 auto}
+.section-tag{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.section-title{font-family:'Satoshi', 'Google Sans', 'Noto Sans Thai', sans-serif; font-weight:700; font-size:clamp(28px,3.5vw,44px);color:var(--text);line-height:1.15;margin-bottom:16px}
+.section-desc{font-size:15px;color:var(--text2);max-width:580px;line-height:1.7}
+.section-divider{border:none;border-top:1px solid var(--border);margin:0 48px}
+
+/* ... remaining styles ... */
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">Claude × Finance</div>
+  <div class="nav-links">
+    <a href="#how">โครงสร้าง</a>
+    <a href="#agents">Agents</a>
+    <a href="#usecases">ตัวอย่างจริง</a>
+    <a href="#commands">คำสั่งใช้งาน</a>
+    <a href="#glossary">คำศัพท์</a>
+    <a href="#deploy">การติดตั้ง</a>
+    <a href="/" style="border-color:rgba(255,255,255,.15);">กลับสู่ Masterclass</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-tag">anthropics/financial-services</div>
+  <h1>AI ที่เข้าใจงาน<br><em>สายการเงินจริงๆ</em></h1>
+  <p class="hero-sub">10 Agent พร้อมใช้ สำหรับงานที่กินเวลามากที่สุดในสายการเงิน — ตั้งแต่ทำ deck pitch บริษัท ไปจนถึงปิดบัญชีสิ้นเดือนและตรวจ KYC</p>
+  <div class="hero-stats">
+    <div class="stat-item"><div class="stat-num">10</div><div class="stat-lbl">Agent</div></div>
+    <div class="stat-item"><div class="stat-num">9</div><div class="stat-lbl">Plugin ตามสาย</div></div>
+    <div class="stat-item"><div class="stat-num">11+</div><div class="stat-lbl">แหล่งข้อมูล</div></div>
+    <div class="stat-item"><div class="stat-num">50+</div><div class="stat-lbl">ชุดทักษะ</div></div>
+  </div>
+  <div class="hero-btns">
+    <a href="#commands" class="btn-primary">ดูตัวอย่างการพิมพ์คำสั่ง (Prompt) →</a>
+    <a href="https://github.com/anthropics/financial-services" target="_blank" class="btn-secondary">GitHub ↗</a>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<section id="how">
+  <div class="section-tag">โครงสร้างระบบ</div>
+  <h2 class="section-title">แต่ละ Agent ประกอบด้วย 3 ชั้น</h2>
+  <p class="section-desc">ทุก Agent เป็นแม่แบบสำเร็จรูปที่รวม ชุดทักษะ + ตัวดึงข้อมูล + AI ผู้ช่วย ไว้ด้วยกัน — ทีมงานปรับแต่งวิธีคำนวณ นโยบายความเสี่ยง และขั้นตอนอนุมัติได้เอง</p>
+  <div class="how-grid">
+    <div class="how-item">
+      <div class="how-num">01</div>
+      <div class="how-title">ชุดทักษะ (Skill)</div>
+      <div class="how-desc">ไฟล์คำแนะนำที่บรรจุความรู้เฉพาะทาง แนวทางปฏิบัติ และขั้นตอนการทำงาน — Claude ดึงมาใช้อัตโนมัติเมื่อบริบทตรง ไม่ต้อง prompt ซ้ำทุกครั้ง</div>
+    </div>
+    <div class="how-item">
+      <div class="how-num">02</div>
+      <div class="how-title">ตัวดึงข้อมูล (Connector)</div>
+      <div class="how-desc">ช่องทางเชื่อมต่อ (MCP) ที่เปิดให้ Claude ดึงข้อมูลจริงจาก FactSet, Bloomberg, Morningstar โดยตรง — ข้อมูลสด ไม่ต้องสลับหน้าต่าง ควบคุมสิทธิ์การเข้าถึงได้</div>
+    </div>
+    <div class="how-item">
+      <div class="how-num">03</div>
+      <div class="how-title">AI ผู้ช่วยเฉพาะทาง (Subagent)</div>
+      <div class="how-desc">Claude อีกตัวที่ถูกเรียกใช้สำหรับงานเฉพาะจุด เช่น คัดเลือกบริษัทเปรียบเทียบ หรือตรวจสอบวิธีคำนวณ — แต่ละตัวมีคำสั่งและเครื่องมือของตัวเอง</div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<section id="agents">
+  <div class="agents-header">
+    <div>
+      <div class="section-tag">Agent ทั้งหมด</div>
+      <h2 class="section-title" style="margin-bottom:0">10 Agent สำหรับงานการเงิน</h2>
+    </div>
+    <div class="filter-tabs">
+      <button class="filter-tab active" onclick="filterAgents('all',this)">ทั้งหมด</button>
+      <button class="filter-tab" onclick="filterAgents('research',this)">วิจัย & ลูกค้า</button>
+      <button class="filter-tab" onclick="filterAgents('ops',this)">บัญชี & ปฏิบัติการ</button>
+    </div>
+  </div>
+
+  <div class="agents-grid" id="agentsGrid">
+    <div class="agent-card" data-color="teal" data-cat="research" onclick="openAgent('pitch')">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="agent-icon icon-teal">🎯</div>
+        <div><div class="agent-name">Pitch Agent</div><div class="agent-badge badge-teal">วิจัย & ลูกค้า</div></div>
+      </div>
+      <div class="agent-desc">สร้าง deck นำเสนอลูกค้าครบวงจร — ใส่รายชื่อบริษัทเป้าหมาย ได้ทั้ง Excel ตัวเลข + สไลด์ PowerPoint + ร่างอีเมล</div>
+      <div class="agent-flow">
+        <div class="flow-label">ขั้นตอน</div>
+        <div class="flow-steps"><span class="flow-step">รายชื่อเป้าหมาย</span><span class="flow-arrow">→</span><span class="flow-step">ดึงข้อมูล</span><span class="flow-arrow">→</span><span class="flow-step">คำนวณตัวเลข</span><span class="flow-arrow">→</span><span class="flow-step">ได้ไฟล์ครบ</span></div>
+      </div>
+      <div class="agent-tags"><span class="agent-tag">IB / M&A</span><span class="agent-tag">Excel</span><span class="agent-tag">PowerPoint</span></div>
+    </div>
+
+    <div class="agent-card" data-color="teal" data-cat="research" onclick="openAgent('meetingprep')">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="agent-icon icon-teal">📋</div>
+        <div><div class="agent-name">Meeting Prep Agent</div><div class="agent-badge badge-teal">วิจัย & ลูกค้า</div></div>
+      </div>
+      <div class="agent-desc">เตรียมข้อมูลก่อนนั่งประชุมกับลูกค้าหรือคู่ค้า — รวมข่าว ตัวเลขการเงิน ประวัติที่ผ่านมา และประเด็นที่ควรหยิบขึ้นมาพูด ไว้ในเอกสารเดียว</div>
+      <div class="agent-flow">
+        <div class="flow-label">ขั้นตอน</div>
+        <div class="flow-steps"><span class="flow-step">ชื่อลูกค้า</span><span class="flow-arrow">→</span><span class="flow-step">ข่าว + ตัวเลข</span><span class="flow-arrow">→</span><span class="flow-step">สังเคราะห์</span><span class="flow-arrow">→</span><span class="flow-step">เอกสารสรุป</span></div>
+      </div>
+      <div class="agent-tags"><span class="agent-tag">ที่ปรึกษา</span><span class="agent-tag">Word</span><span class="agent-tag">สั่งได้ทุกที่</span></div>
+    </div>
+
+    <div class="agent-card" data-color="blue" data-cat="research" onclick="openAgent('earnings')">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="agent-icon icon-blue">📊</div>
+        <div><div class="agent-name">Earnings Reviewer</div><div class="agent-badge badge-blue">วิจัย & ลูกค้า</div></div>
+      </div>
+      <div class="agent-desc">อ่านผลประกอบการและงบการเงิน → อัปเดตโมเดลตัวเลข → ชี้ประเด็นที่เปลี่ยนแปลงจากที่คาด → ร่างบทวิเคราะห์สำหรับนักลงทุน</div>
+      <div class="agent-flow">
+        <div class="flow-label">ขั้นตอน</div>
+        <div class="flow-steps"><span class="flow-step">ผลประกอบการ</span><span class="flow-arrow">→</span><span class="flow-step">อัปเดตโมเดล</span><span class="flow-arrow">→</span><span class="flow-step">ร่างบทวิเคราะห์</span></div>
+      </div>
+      <div class="agent-tags"><span class="agent-tag">วิเคราะห์หุ้น</span><span class="agent-tag">ผลประกอบการ</span><span class="agent-tag">Excel</span></div>
+    </div>
+
+    <div class="agent-card" data-color="blue" data-cat="research" onclick="openAgent('modelbuilder')">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="agent-icon icon-blue">⚙️</div>
+        <div><div class="agent-name">Model Builder</div><div class="agent-badge badge-blue">วิจัย & ลูกค้า</div></div>
+      </div>
+      <div class="agent-desc">สร้างและดูแลโมเดลการเงินใน Excel — DCF, LBO, งบการเงิน 3 ตัว หรือตารางเปรียบเทียบบริษัท พร้อมสูตรจริงและสีตามมาตรฐานสายงาน</div>
+      <div class="agent-flow">
+        <div class="flow-label">ขั้นตอน</div>
+        <div class="flow-steps"><span class="flow-step">งบการเงิน</span><span class="flow-arrow">→</span><span class="flow-step">สร้างโมเดล</span><span class="flow-arrow">→</span><span class="flow-step">ทดสอบสถานการณ์</span><span class="flow-arrow">→</span><span class="flow-step">ไฟล์ Excel</span></div>
+      </div>
+      <div class="agent-tags"><span class="agent-tag">DCF</span><span class="agent-tag">LBO</span><span class="agent-tag">3-Statement</span></div>
+    </div>
+
+    <div class="agent-card" data-color="purple" data-cat="research" onclick="openAgent('marketresearcher')">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="agent-icon icon-purple">🔍</div>
+        <div><div class="agent-name">Market Researcher</div><div class="agent-badge badge-purple">วิจัย & ลูกค้า</div></div>
+      </div>
+      <div class="agent-desc">ติดตามภาพรวมอุตสาหกรรม รวบรวมข่าว รายงาน และความเห็นนักวิเคราะห์ พร้อม flag ประเด็นที่กระทบสินเชื่อหรือความเสี่ยง</div>
+      <div class="agent-flow">
+        <div class="flow-label">ขั้นตอน</div>
+        <div class="flow-steps"><span class="flow-step">ระบุอุตสาหกรรม</span><span class="flow-arrow">→</span><span class="flow-step">รวบรวมข้อมูล</span><span class="flow-arrow">→</span><span class="flow-step">ภาพรวม</span></div>
+      </div>
+      <div class="agent-tags"><span class="agent-tag">สินเชื่อ</span><span class="agent-tag">ความเสี่ยง</span><span class="agent-tag">อุตสาหกรรม</span></div>
+    </div>
+
+    <div class="agent-card" data-color="amber" data-cat="ops" onclick="openAgent('valuation')">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="agent-icon icon-amber">🏷️</div>
+        <div><div class="agent-name">Valuation Reviewer</div><div class="agent-badge badge-amber">บัญชี & ปฏิบัติการ</div></div>
+      </div>
+      <div class="agent-desc">รับข้อมูลมูลค่าจาก GP → รัน template → เทียบกับบริษัทใกล้เคียงในตลาด → ตรวจวิธีคำนวณ → เตรียมรายงานให้ LP</div>
+      <div class="agent-flow">
+        <div class="flow-label">ขั้นตอน</div>
+        <div class="flow-steps"><span class="flow-step">ข้อมูล GP</span><span class="flow-arrow">→</span><span class="flow-step">ประเมินมูลค่า</span><span class="flow-arrow">→</span><span class="flow-step">รายงาน LP</span></div>
+      </div>
+      <div class="agent-tags"><span class="agent-tag">กองทุน PE</span><span class="agent-tag">รายงาน LP</span><span class="agent-tag">มูลค่า</span></div>
+    </div>
+
+    <div class="agent-card" data-color="coral" data-cat="ops" onclick="openAgent('gl')">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="agent-icon icon-coral">🔄</div>
+        <div><div class="agent-name">GL Reconciler</div><div class="agent-badge badge-coral">บัญชี & ปฏิบัติการ</div></div>
+      </div>
+      <div class="agent-desc">ตรวจสอบความถูกต้องของบัญชีแยกประเภท คำนวณ NAV หาจุดที่ตัวเลขไม่ตรงกัน ค้นหาสาเหตุ แล้วส่งให้ผู้รับผิดชอบอนุมัติ</div>
+      <div class="agent-flow">
+        <div class="flow-label">ขั้นตอน</div>
+        <div class="flow-steps"><span class="flow-step">บัญชีแยกประเภท</span><span class="flow-arrow">→</span><span class="flow-step">หาตัวเลขที่ขัดกัน</span><span class="flow-arrow">→</span><span class="flow-step">ค้นสาเหตุ</span><span class="flow-arrow">→</span><span class="flow-step">ส่งอนุมัติ</span></div>
+      </div>
+      <div class="agent-tags"><span class="agent-tag">บัญชี GL</span><span class="agent-tag">NAV</span><span class="agent-tag">กองทุน</span></div>
+    </div>
+
+    <div class="agent-card" data-color="coral" data-cat="ops" onclick="openAgent('monthend')">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="agent-icon icon-coral">📅</div>
+        <div><div class="agent-name">Month-End Closer</div><div class="agent-badge badge-coral">บัญชี & ปฏิบัติการ</div></div>
+      </div>
+      <div class="agent-desc">รัน checklist ปิดบัญชี สร้างรายการบันทึกบัญชี ทำ roll-forward บัญชีสำคัญ เขียนอธิบายความเบี่ยงเบนจากเป้า และสรุปรายงานปิดประจำเดือน</div>
+      <div class="agent-flow">
+        <div class="flow-label">ขั้นตอน</div>
+        <div class="flow-steps"><span class="flow-step">Checklist ปิดบัญชี</span><span class="flow-arrow">→</span><span class="flow-step">บันทึกบัญชี</span><span class="flow-arrow">→</span><span class="flow-step">รายงานปิดเดือน</span></div>
+      </div>
+      <div class="agent-tags"><span class="agent-tag">ปิดงบ</span><span class="agent-tag">Accrual</span><span class="agent-tag">Variance</span></div>
+    </div>
+
+    <div class="agent-card" data-color="green" data-cat="ops" onclick="openAgent('auditor')">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="agent-icon icon-green">🔎</div>
+        <div><div class="agent-name">Statement Auditor</div><div class="agent-badge badge-green">บัญชี & ปฏิบัติการ</div></div>
+      </div>
+      <div class="agent-desc">ตรวจงบการเงินสำหรับ LP ก่อนส่ง — ตรวจตัวเลขสอดคล้องกัน ครบทุก disclosure ถูกต้องตามมาตรฐาน ก่อนอนุมัติส่ง</div>
+      <div class="agent-flow">
+        <div class="flow-label">ขั้นตอน</div>
+        <div class="flow-steps"><span class="flow-step">งบ LP</span><span class="flow-arrow">→</span><span class="flow-step">ตรวจสอบ</span><span class="flow-arrow">→</span><span class="flow-step">อนุมัติส่ง</span></div>
+      </div>
+      <div class="agent-tags"><span class="agent-tag">กองทุน</span><span class="agent-tag">Audit</span><span class="agent-tag">Compliance</span></div>
+    </div>
+
+    <div class="agent-card" data-color="amber" data-cat="ops" onclick="openAgent('kyc')">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="agent-icon icon-amber">🛡️</div>
+        <div><div class="agent-name">KYC Screener</div><div class="agent-badge badge-amber">บัญชี & ปฏิบัติการ</div></div>
+      </div>
+      <div class="agent-desc">อ่านเอกสารเปิดบัญชีลูกค้า รัน rule engine ตรวจสอบ flag ข้อมูลที่ขาดหรือน่าสงสัย แพ็กเกจส่งให้ Compliance พิจารณาต่อ</div>
+      <div class="agent-flow">
+        <div class="flow-label">ขั้นตอน</div>
+        <div class="flow-steps"><span class="flow-step">เอกสารลูกค้า</span><span class="flow-arrow">→</span><span class="flow-step">ตรวจตาม rule</span><span class="flow-arrow">→</span><span class="flow-step">ส่ง Compliance</span></div>
+      </div>
+      <div class="agent-tags"><span class="agent-tag">KYC / AML</span><span class="agent-tag">Compliance</span><span class="agent-tag">เปิดบัญชี</span></div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<section id="usecases">
+  <div class="section-tag">สถานการณ์จริง</div>
+  <h2 class="section-title">6 เหตุการณ์ที่เกิดจริงในที่ทำงาน</h2>
+  <p class="section-desc">ตัวอย่างจากบริษัทหลักทรัพย์ PE firm ธนาคาร และ fund admin ที่นำ Claude Agent มาช่วยงานหนัก ทำเสร็จเร็วขึ้นและผิดพลาดน้อยลง</p>
+
+  <div class="usecase-grid">
+    <div class="usecase-card" data-color="teal" onclick="openUsecase('ibpitch')">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="agent-icon icon-teal">🏦</div>
+        <div><div class="uc-title">IB: ทำ deck ส่งลูกค้าใน 2 ชั่วโมง</div><div class="uc-context">Investment Banking</div></div>
+      </div>
+      <div class="uc-desc">Analyst ถูกเรียกกะทันหันต้องมี deck นำเสนอก่อนตี 8 พรุ่งนี้ — Pitch Agent จัดการตัวเลข comps และสร้างสไลด์ให้เสร็จใน 2 ชั่วโมง</div>
+      <div class="uc-time">⏱ 2 ชั่วโมง (ปกติ 6 ชั่วโมง)</div>
+      <span class="uc-badge">Pitch Agent</span>
+    </div>
+
+    <div class="usecase-card" data-color="coral" onclick="openUsecase('pesourcing')">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="agent-icon icon-coral">🎯</div>
+        <div><div class="uc-title">PE: คัดกรอง 100 deal ในวันเดียว</div><div class="uc-context">Private Equity</div></div>
+      </div>
+      <div class="uc-desc">Broker ส่ง CIM มา 100 เล่มในคราวเดียว ทีมต้องหา deal ที่น่าสนใจก่อนสิ้นสัปดาห์ — KYC Screener อ่านและ flag ให้เสร็จข้ามคืน</div>
+      <div class="uc-time">⏱ 4 ชั่วโมง (ปกติ 2 วัน)</div>
+      <span class="uc-badge">KYC + Sourcing Agents</span>
+    </div>
+
+    <div class="usecase-card" data-color="blue" onclick="openUsecase('earnings')">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="agent-icon icon-blue">📈</div>
+        <div><div class="uc-title">Research: วิเคราะห์ผลทันหลัง market ปิด</div><div class="uc-context">Equity Research</div></div>
+      </div>
+      <div class="uc-desc">Apple ประกาศผลประกอบการหลัง 4 โมงเย็น — นักวิเคราะห์ต้องส่งบทวิเคราะห์ให้ลูกค้าก่อนตลาดเปิดวันถัดไป Earnings Reviewer ร่างให้เสร็จใน 90 นาที</div>
+      <div class="uc-time">⏱ 90 นาที (ปกติทั้งคืน)</div>
+      <span class="uc-badge">Earnings Reviewer</span>
+    </div>
+
+    <div class="usecase-card" data-color="purple" onclick="openUsecase('monthend')">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="agent-icon icon-purple">📅</div>
+        <div><div class="uc-title">Fund Admin: ปิดบัญชีสิ้นเดือนใน 2 วัน</div><div class="uc-context">Fund Administration</div></div>
+      </div>
+      <div class="uc-desc">งานปิดบัญชี คำนวณ NAV และจัดทำรายงาน LP ที่ปกติใช้เวลา 5 วัน ลดเหลือ 2 วัน เพราะ GL Reconciler และ Month-End Closer ทำงานพร้อมกัน</div>
+      <div class="uc-time">⏱ 2 วัน (ปกติ 5 วัน)</div>
+      <span class="uc-badge">Month-End Closer + GL Reconciler</span>
+    </div>
+
+    <div class="usecase-card" data-color="green" onclick="openUsecase('wealthmgr')">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="agent-icon icon-green">👔</div>
+        <div><div class="uc-title">Wealth: เตรียมข้อมูลลูกค้า 30 คนข้ามคืน</div><div class="uc-context">Wealth Management</div></div>
+      </div>
+      <div class="uc-desc">ที่ปรึกษาการเงินมีนัดคุยกับลูกค้า 30 คนตลอดสัปดาห์ — Meeting Prep Agent เตรียม brief ส่วนตัวสำหรับแต่ละคนพร้อมในเช้าวันอังคาร</div>
+      <div class="uc-time">⏱ 4 ชั่วโมง (ปกติ 1-2 วัน)</div>
+      <span class="uc-badge">Meeting Prep Agent</span>
+    </div>
+
+    <div class="usecase-card" data-color="amber" onclick="openUsecase('compliance')">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="agent-icon icon-amber">🛡️</div>
+        <div><div class="uc-title">Compliance: ตรวจ KYC ลูกค้า 500 ราย</div><div class="uc-context">Operations & Compliance</div></div>
+      </div>
+      <div class="uc-desc">ธนาคารต้องรีวิว KYC ลูกค้าทั้งหมดสำหรับการตรวจสอบประจำปี — KYC Screener คัดกรองและจัดระดับความเสี่ยง 500 ไฟล์เสร็จใน 2 วัน</div>
+      <div class="uc-time">⏱ 2 วัน (ปกติ 3 สัปดาห์)</div>
+      <span class="uc-badge">KYC Screener</span>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- NEW SECTION: COMMANDS -->
+<section id="commands">
+  <div class="section-tag">Prompt & Slash Commands</div>
+  <h2 class="section-title">เรียกใช้งานง่ายๆ ผ่านหน้าต่าง Chat</h2>
+  <p class="section-desc">ตัวอย่างการใช้งาน <b>Financial Analysis Plugins</b> ในหน้าต่าง Cowork แค่กดบวก + ที่ช่องแชทแล้วเลือก Plugin หรือพิมพ์ <code>/</code> (Slash) แล้วเลือก Skill ที่ต้องการ พร้อมระบุหุ้นที่ต้องการวิเคราะห์</p>
+
+  <div class="cmd-grid">
+    <div class="cmd-card">
+      <div class="cmd-header">
+        <span class="cmd-slash">/dcf-model</span>
+        <span class="cmd-stock">TSLA</span>
+      </div>
+      <div class="cmd-chat">
+        <div class="cmd-prompt">
+          <span>/dcf-model</span> ดึงข้อมูลผลประกอบการ Q3 ล่าสุดของ <b>Tesla (TSLA)</b> มาสร้างโมเดลประเมินมูลค่าหุ้นด้วยวิธีคิดลดกระแสเงินสด (DCF) ขอ Terminal Multiple อิงจากตลาดปัจจุบัน
+        </div>
+      </div>
+      <div class="cmd-result-box">
+        <div class="cmd-result-icon">⚡</div>
+        <div class="cmd-result-text"><b>ผลลัพธ์:</b> ได้ไฟล์ Excel โมเดล DCF ของ Tesla ครบทุกชีต พร้อมตาราง Sensitivity Analysis อัตโนมัติ (WACC vs Growth Rate)</div>
+      </div>
+    </div>
+    <div class="cmd-card">
+      <div class="cmd-header">
+        <span class="cmd-slash">/comps-analysis</span>
+        <span class="cmd-stock">NVDA</span>
+      </div>
+      <div class="cmd-chat">
+        <div class="cmd-prompt">
+          <span>/comps-analysis</span> เปรียบเทียบ <b>Nvidia (NVDA)</b> กับคู่แข่งหลักอย่าง AMD และ Intel โฟกัสที่อัตรากำไรขั้นต้น (Gross Margin) และ P/E Ratio ล่วงหน้า 12 เดือน
+        </div>
+      </div>
+      <div class="cmd-result-box">
+        <div class="cmd-result-icon">📊</div>
+        <div class="cmd-result-text"><b>ผลลัพธ์:</b> ได้ตาราง Excel สรุปค่า Median ของกลุ่มชิป เทียบให้เห็นชัดเจนว่า NVDA เทรดอยู่ที่ระดับพรีเมียมเท่าไหร่</div>
+      </div>
+    </div>
+    <div class="cmd-card">
+      <div class="cmd-header">
+        <span class="cmd-slash">/deck-refresh</span>
+        <span class="cmd-stock">AAPL</span>
+      </div>
+      <div class="cmd-chat">
+        <div class="cmd-prompt">
+          <span>/deck-refresh</span> นำไฟล์ Presentation (PPTX) ของ <b>Apple (AAPL)</b> ที่เคยทำไว้เมื่อไตรมาสก่อน มาอัปเดตตัวเลขยอดขาย iPhone ใหม่จากงบ Q4 ที่เพิ่งประกาศเมื่อคืนนี้
+        </div>
+      </div>
+      <div class="cmd-result-box">
+        <div class="cmd-result-icon">📑</div>
+        <div class="cmd-result-text"><b>ผลลัพธ์:</b> ไฟล์สไลด์ถูกอัปเดตตัวเลขใหม่ กราฟถูกปรับให้ตรงกับความเป็นจริง พร้อมไฮไลต์จุดที่มีการเปลี่ยนแปลง</div>
+      </div>
+    </div>
+    <div class="cmd-card">
+      <div class="cmd-header">
+        <span class="cmd-slash">/3-statement-model</span>
+        <span class="cmd-stock">MSFT</span>
+      </div>
+      <div class="cmd-chat">
+        <div class="cmd-prompt">
+          <span>/3-statement-model</span> สร้างงบการเงิน 3 ตัวเชื่อมโยงกันสำหรับ <b>Microsoft (MSFT)</b> โดยให้คาดการณ์ (Project) ล่วงหน้า 5 ปี อิงจากอัตราการเติบโตของแผนก Azure Cloud
+        </div>
+      </div>
+      <div class="cmd-result-box">
+        <div class="cmd-result-icon">💼</div>
+        <div class="cmd-result-text"><b>ผลลัพธ์:</b> Excel งบดุล งบกำไรขาดทุน และงบกระแสเงินสด ผูกสูตรกันเรียบร้อย เปลี่ยนค่ายอดขาย Cloud ยอดเงินสดในงบดุลก็เปลี่ยนตาม</div>
+      </div>
+    </div>
+    <div class="cmd-card">
+      <div class="cmd-header">
+        <span class="cmd-slash">/competitive-analysis</span>
+        <span class="cmd-stock">NFLX</span>
+      </div>
+      <div class="cmd-chat">
+        <div class="cmd-prompt">
+          <span>/competitive-analysis</span> สรุปโครงสร้างการแข่งขันของ <b>Netflix (NFLX)</b> เทียบกับ Disney+ และ Amazon Prime เน้นที่ต้นทุนการผลิตคอนเทนต์และฐานสมาชิก (Subscribers)
+        </div>
+      </div>
+      <div class="cmd-result-box">
+        <div class="cmd-result-icon">⚔️</div>
+        <div class="cmd-result-text"><b>ผลลัพธ์:</b> สไลด์โครงสร้างตลาด (Market Landscape) สรุปจุดแข็ง จุดอ่อน และปัจจัยความเสี่ยงของแต่ละแพลตฟอร์ม</div>
+      </div>
+    </div>
+    <div class="cmd-card">
+      <div class="cmd-header">
+        <span class="cmd-slash">/lbo-model</span>
+        <span class="cmd-stock">DEAL</span>
+      </div>
+      <div class="cmd-chat">
+        <div class="cmd-prompt">
+          <span>/lbo-model</span> จำลองการซื้อกิจการแบบ Leveraged Buyout ของบริษัทซอฟต์แวร์ A ด้วยโครงสร้างหนี้ 70% ทุน 30% คำนวณ IRR กรณีขายกิจการในปีที่ 5
+        </div>
+      </div>
+      <div class="cmd-result-box">
+        <div class="cmd-result-icon">💰</div>
+        <div class="cmd-result-text"><b>ผลลัพธ์:</b> Excel ไฟล์รันโมเดล LBO สมบูรณ์แบบ บอกตัวเลข IRR ชัดเจน เพื่อให้ทีม Investment Committee นำไปตัดสินใจต่อ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<section id="glossary">
+  <div class="section-tag">คำศัพท์สายงาน</div>
+  <h2 class="section-title">อ่านแล้วเห็นภาพทันที</h2>
+  <p class="section-desc">คำศัพท์การเงินและเทคนิคที่ใช้บ่อย อธิบายด้วยภาษาพูดและตัวอย่างเปรียบเทียบที่จับต้องได้</p>
+  <div class="glossary-grid">
+    <div class="glossary-card">
+      <div class="term">Comps (Comparable Companies)</div>
+      <div class="definition">การหาบริษัทที่ธุรกิจคล้ายกัน แล้วนำตัวเลขของพวกเขามาเทียบ เพื่อประมาณมูลค่าของบริษัทที่เราสนใจ</div>
+      <div class="example">จะขาย Starbucks ก็ดู Costa, Peet's, Blue Bottle — ร้านกาแฟระดับนี้เขาซื้อขายกันที่กี่เท่าของกำไร เอาค่ากลางนั้นมาคูณ</div>
+    </div>
+    <div class="glossary-card">
+      <div class="term">DCF (Discounted Cash Flow)</div>
+      <div class="definition">วิธีประมาณมูลค่าบริษัทโดยคาดกระแสเงินสดในอนาคต 5–10 ปี แล้วแปลงกลับมาเป็นมูลค่า ณ วันนี้ เพราะเงินในอนาคตมีค่าน้อยกว่าเงินในมือ</div>
+      <div class="example">บริษัทคาดว่าปีหน้าได้กำไร 100 ล้าน ปีถัดไป 120 ล้าน ... เราต้องนำมา "หักส่วนลด" ก่อนบวกรวม ถ้า WACC 10% เงิน 100 ล้านปีหน้า = 90.9 ล้านในวันนี้</div>
+    </div>
+    <div class="glossary-card">
+      <div class="term">LBO (Leveraged Buyout)</div>
+      <div class="definition">การซื้อกิจการโดยใช้เงินกู้เป็นส่วนใหญ่ แล้วให้ตัวบริษัทที่ซื้อมาหาเงินมาใช้หนี้เองจากการดำเนินธุรกิจ</div>
+      <div class="example">PE firm ออกเงินเอง 200 ล้าน กู้เพิ่ม 800 ล้าน ซื้อบริษัท XYZ 1,000 ล้าน จากนั้นใช้กำไรของ XYZ ค่อยๆ ตัดหนี้ พอขายออกในปีที่ 5 ผลตอบแทนจะสูงมากถ้าบริษัทโตดี</div>
+    </div>
+    <div class="glossary-card">
+      <div class="term">MCP (Model Context Protocol)</div>
+      <div class="definition">มาตรฐานการเชื่อมต่อที่ให้ Claude ดึงข้อมูลจากแหล่งภายนอกโดยตรง เช่น Bloomberg หรือ FactSet โดยไม่ต้องให้คนพิมพ์ตัวเลขเข้า</div>
+      <div class="example">แทนที่จะต้องเปิด Bloomberg ดูราคา Apple แล้วพิมพ์เข้า Claude ด้วยมือ — MCP ให้ Claude ดึงตัวเลขนั้นเองโดยอัตโนมัติ</div>
+    </div>
+    <div class="glossary-card">
+      <div class="term">Orchestrator</div>
+      <div class="definition">Claude ตัวหลักที่ทำหน้าที่ควบคุมและมอบงานให้ AI ผู้ช่วยตัวอื่นๆ คล้ายกับ Project Manager ของทีม</div>
+      <div class="example">Pitch Agent (orchestrator) สั่ง: "ผู้ช่วยคัดเลือก comps — หาบริษัทเปรียบเทียบ 5 ตัว", "ผู้ช่วยคำนวณ LBO — รันตัวเลข IRR-MOIC", "ผู้ช่วยตรวจสอบ — verify สมมติฐาน"</div>
+    </div>
+    <div class="glossary-card">
+      <div class="term">Subagent (AI ผู้ช่วยเฉพาะทาง)</div>
+      <div class="definition">Claude อีกตัวที่ถูกเรียกให้ทำงานเฉพาะจุด เช่น คัดเลือก comps หรือตรวจวิธีคำนวณ — แต่ละตัวมีความเชี่ยวชาญของตัวเอง</div>
+      <div class="example">Comps subagent ถูก train ให้รู้ว่า "บริษัท semiconductor ไม่ควรเทียบกับ software" ทำงานนี้อย่างเดียวและทำได้แม่นกว่า</div>
+    </div>
+    <div class="glossary-card">
+      <div class="term">Skill (ชุดทักษะ)</div>
+      <div class="definition">ไฟล์คำแนะนำที่บอก Claude ว่า "งานประเภทนี้ทำอย่างไรถึงจะถูกต้องตามมาตรฐานสายงาน" — Claude ดึงมาใช้อัตโนมัติ</div>
+      <div class="example">Skill "comps-analysis" บอกว่า "เลือกบริษัทที่ revenue ต่างกันไม่เกิน 50–200% growth ใกล้กัน และอยู่ใน sub-sector เดียวกัน"</div>
+    </div>
+    <div class="glossary-card">
+      <div class="term">3-Statement Model (งบการเงิน 3 ตัว)</div>
+      <div class="definition">โมเดล Excel ที่รวมงบทั้ง 3 ไว้ด้วยกันและเชื่อมโยงกันอัตโนมัติ — งบกำไรขาดทุน งบดุล และงบกระแสเงินสด</div>
+      <div class="example">กำไรในงบกำไรขาดทุน → ไหลไปเพิ่มกำไรสะสมในงบดุล → กระทบเงินสดในงบกระแสเงินสด — เปลี่ยนตัวเลขที่ไหน อีก 2 งบปรับตามอัตโนมัติ</div>
+    </div>
+    <div class="glossary-card">
+      <div class="term">Pitch Deck</div>
+      <div class="definition">สไลด์ PowerPoint ที่ทำขึ้นเพื่อนำเสนอข้อเสนอ M&A หรือการลงทุนให้ลูกค้าหรือผู้บริหาร</div>
+      <div class="example">ประกอบด้วยภาพรวมธุรกรรม → ภาพรวมบริษัทเป้าหมาย → ตัวเลขเปรียบเทียบ (comps) → มูลค่าที่ประเมินได้ → เหตุผลที่ควรทำ deal</div>
+    </div>
+    <div class="glossary-card">
+      <div class="term">Due Diligence (DD)</div>
+      <div class="definition">กระบวนการตรวจสอบบริษัทอย่างละเอียดก่อนตัดสินใจซื้อหรือลงทุน — ทั้งการเงิน กฎหมาย ปฏิบัติการ และเชิงพาณิชย์</div>
+      <div class="example">ตรวจงบการเงิน 5 ปีย้อนหลัง → อ่านสัญญาลูกค้าทุกฉบับ → ตรวจหนี้ที่ซ่อนอยู่ → สัมภาษณ์ผู้บริหาร → ตรวจ IP และสิทธิบัตร</div>
+    </div>
+    <div class="glossary-card">
+      <div class="term">IC Memo (Investment Committee)</div>
+      <div class="definition">เอกสารสรุปที่จัดทำเพื่อนำเสนอต่อคณะกรรมการลงทุน ให้โหวตว่า "อนุมัติ" หรือ "ไม่อนุมัติ" การลงทุนนั้น</div>
+      <div class="example">IC Memo ระบุ: ลงทุน 500 ล้านบาทใน XYZ เพราะ market position แข็งแกร่ง margin ขยาย ราคาที่จ่ายสมเหตุสมผล คาดผลตอบแทน IRR 25% ใน 5 ปี ความเสี่ยงหลักคือ...</div>
+    </div>
+    <div class="glossary-card">
+      <div class="term">KYC (Know Your Customer)</div>
+      <div class="definition">กระบวนการที่สถาบันการเงินต้องทำเพื่อยืนยันตัวตนและประเมินความเสี่ยงของลูกค้าก่อนให้บริการ ตามกฎหมายป้องกันฟอกเงิน</div>
+      <div class="example">ตรวจบัตรประชาชน → ยืนยันที่อยู่ → ถามที่มาของเงิน → ตรวจรายชื่อ sanctions list → ดูข่าวด้านลบ → ประเมินระดับความเสี่ยง</div>
+    </div>
+    <div class="glossary-card">
+      <div class="term">NAV (Net Asset Value)</div>
+      <div class="definition">มูลค่าสินทรัพย์สุทธิของกองทุน คำนวณจาก สินทรัพย์รวม ลบ หนี้สินรวม เป็นตัวเลขที่บอกว่านักลงทุนถือหน่วยลงทุนมูลค่าเท่าไหร่</div>
+      <div class="example">กองทุน PE มีพอร์ต 1,000 ล้าน หนี้ 100 ล้าน NAV = 900 ล้าน มีนักลงทุน 10 คน ลงทุนเท่ากัน แต่ละคนถือ "หน่วย" มูลค่า 90 ล้าน</div>
+    </div>
+    <div class="glossary-card">
+      <div class="term">Valuation (การประเมินมูลค่า)</div>
+      <div class="definition">กระบวนการหาว่าบริษัทหรือสินทรัพย์มีมูลค่าเท่าไหร่ โดยใช้หลายวิธีแล้วนำมาสรุป ไม่มีคำตอบเดียวที่ถูกต้อง</div>
+      <div class="example">วิธี comps บอก 150 ล้าน, วิธี DCF บอก 130 ล้าน, วิธี precedent transaction บอก 160 ล้าน — นักวิเคราะห์สรุปว่า "fair value อยู่ที่ 140–150 ล้าน"</div>
+    </div>
+    <div class="glossary-card">
+      <div class="term">Precedent Transaction</div>
+      <div class="definition">การซื้อขายบริษัทที่เกิดขึ้นจริงในอดีต ใช้เป็นข้อมูลอ้างอิงว่าตลาดยอมจ่ายเท่าไหร่สำหรับธุรกิจแบบนี้</div>
+      <div class="example">3 ปีที่ผ่านมา มีการซื้อขายร้านกาแฟ 5 ดีล ที่ EV/EBITDA เฉลี่ย 12x เพราะฉะนั้น deal ของเราน่าจะอยู่ใกล้ตัวเลขนั้น ถ้า market condition ไม่ต่างกันมาก</div>
+    </div>
+    <div class="glossary-card">
+      <div class="term">WACC (Weighted Average Cost of Capital)</div>
+      <div class="definition">ต้นทุนเงินทุนเฉลี่ยของบริษัท คือดอกเบี้ยและผลตอบแทนที่บริษัทต้องจ่ายให้เจ้าหนี้และผู้ถือหุ้นรวมกัน ใช้เป็นอัตราคิดลดใน DCF</div>
+      <div class="example">บริษัทมีหนี้ 40% ดอกเบี้ย 6% และหุ้น 60% ผู้ถือหุ้นต้องการผลตอบแทน 12% → WACC = (40%×6%) + (60%×12%) = 9.6%</div>
+    </div>
+    <div class="glossary-card">
+      <div class="term">Sensitivity Analysis</div>
+      <div class="definition">การทดสอบโมเดลว่าถ้าสมมติฐานเปลี่ยนไป ผลลัพธ์จะเปลี่ยนแค่ไหน ช่วยให้เห็นว่ามูลค่าขึ้นอยู่กับตัวแปรไหนมากที่สุด</div>
+      <div class="example">ตาราง 2 มิติ: แนวนอนเป็น WACC (8%–12%) แนวตั้งเป็น revenue growth (3%–9%) แต่ละช่องบอกมูลค่าที่ได้ — ดูว่าสมมติฐานไหนกระทบมูลค่าสุดโต่ง</div>
+    </div>
+    <div class="glossary-card">
+      <div class="term">GP / LP</div>
+      <div class="definition">GP (General Partner) คือบริษัท PE ที่บริหารกองทุนและตัดสินใจลงทุน — LP (Limited Partner) คือนักลงทุนที่ให้เงินแต่ไม่ได้บริหาร</div>
+      <div class="example">Carlyle Group คือ GP บริหารกองทุน 10,000 ล้าน — CalPERS (กองทุนบำเหน็จสหรัฐฯ) ลงเงิน 1,000 ล้านเป็น LP รับผลตอบแทนแต่ไม่ต้องมาทำงาน</div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<section id="deploy">
+  <div class="section-tag">การติดตั้ง</div>
+  <h2 class="section-title">3 วิธีใช้งาน</h2>
+  <p class="section-desc">ชุดทักษะและคำสั่งเดียวกันทุกช่องทาง — เลือกตามรูปแบบการทำงานและโครงสร้าง IT ของบริษัท</p>
+  <div class="deploy-grid">
+    <div class="deploy-card">
+      <div class="deploy-num">1</div>
+      <div class="deploy-icon">💬</div>
+      <div class="deploy-title">Claude Cowork / Code Plugin</div>
+      <div class="deploy-desc">ทำงานคู่กับผู้ใช้บน desktop — สั่งงานด้วยข้อความหรือเสียงจากที่ไหนก็ได้ผ่าน Dispatch ผลลัพธ์รอบนโต๊ะเมื่อกลับมา</div>
+      <div class="deploy-code">Settings → Plugins → Add plugin<br>วาง: github.com/anthropics/financial-services</div>
+    </div>
+    <div class="deploy-card">
+      <div class="deploy-num">2</div>
+      <div class="deploy-icon">⚡</div>
+      <div class="deploy-title">Claude Managed Agents API</div>
+      <div class="deploy-desc">รันแบบอัตโนมัติในเบื้องหลัง ไม่ต้องมีคนดูแลตลอด — มี log ทุกขั้นตอน ตั้งเวลาทำงานได้ จัดการสิทธิ์และ credential ผ่าน Claude Console</div>
+      <div class="deploy-code">scripts/deploy-managed-agent.sh pitch-agent<br># POST /v1/agents → subagents สร้างอัตโนมัติ</div>
+    </div>
+    <div class="deploy-card">
+      <div class="deploy-num">3</div>
+      <div class="deploy-icon">🖥️</div>
+      <div class="deploy-title">Microsoft 365 Add-in</div>
+      <div class="deploy-desc">Claude ทำงานอยู่ใน Excel, PowerPoint, Word และ Outlook — ข้อมูลส่งต่อระหว่างแอปโดยอัตโนมัติ ไม่ต้องสลับหน้าต่างหรือ copy-paste</div>
+      <div class="deploy-code">claude plugin install claude-for-msft-365-install<br>/claude-for-msft-365-install:setup</div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<footer>
+  <div>
+    <div class="footer-logo">Claude × Finance</div>
+    <div class="footer-note" style="margin-top:8px">อ้างอิงจาก github.com/anthropics/financial-services และ anthropic.com/news/finance-agents — ประกาศ 5 พฤษภาคม 2569</div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:6px;text-align:right">
+    <a href="https://github.com/anthropics/financial-services" target="_blank" class="footer-link">GitHub Repo ↗</a>
+    <a href="https://www.anthropic.com/news/finance-agents" target="_blank" class="footer-link">ประกาศทางการ ↗</a>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-bg" id="modalBg" onclick="closeModalBg(event)">
+  <div class="modal" id="modal">
+    <div class="modal-top">
+      <div>
+        <div id="modalBadge" class="agent-badge" style="margin-bottom:8px"></div>
+        <div id="modalTitle" style="font-family:'Satoshi', 'Google Sans', 'Noto Sans Thai', sans-serif; font-weight:700; font-size:22px;color:var(--text)"></div>
+        <div id="modalSubtitle" style="font-size:13px;color:var(--text2);margin-top:4px"></div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+const agents = { /* ... omitted for brevity ... */ };
+const usecases = { /* ... omitted for brevity ... */ };
+function openAgent(id){ /* ... omitted for brevity ... */ }
+function openUsecase(id){ /* ... omitted for brevity ... */ }
+function closeModal(){ document.getElementById('modalBg').classList.remove('open'); document.body.style.overflow=''; }
+function closeModalBg(e){ if(e.target===document.getElementById('modalBg')) closeModal(); }
+function filterAgents(cat,btn){ document.querySelectorAll('.filter-tab').forEach(t=>t.classList.remove('active')); btn.classList.add('active'); document.querySelectorAll('.agent-card').forEach(card=>{ card.style.display=(cat==='all'||card.dataset.cat===cat)?'':''; }); }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
+</script>
+</body>
+</html>

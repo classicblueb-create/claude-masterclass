@@ -1214,6 +1214,9 @@ export default function App() {
         <div style={{ padding: "10px 14px 24px", marginBottom: 10 }}>
           <div style={{ fontSize: 18, fontWeight: 800 }} className="text-gradient">Claude Masterclass</div>
           <div style={{ fontSize: 12, color: "var(--text-muted)", marginTop: 4 }}>คู่มือสมบูรณ์ภาษาไทย ฉบับ AI Tutor</div>
+          <a href="/finance.html" target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, marginTop: 14, padding: "10px 14px", borderRadius: 12, background: "rgba(124,58,237,0.1)", color: "#7C3AED", textDecoration: "none", fontWeight: 700, border: "1px solid rgba(124,58,237,0.2)" }}>
+            🔗 Finance Agents
+          </a>
         </div>
         {navSections.map((s) => (
           <div key={s.id} className={`nav-item ${activeSection === s.id ? "active" : ""}`} onClick={() => scrollTo(s.id)}>
@@ -1973,7 +1976,6 @@ Examples: newsletter_v1.md / client-brief_v2.docx
               <p style={{ color: "var(--text-muted)", fontSize: 14, lineHeight: 1.7, marginBottom: 16 }}>Plugins สำเร็จรูปจาก Anthropic สำหรับงาน Knowledge Work</p>
               <a href="https://github.com/anthropics/knowledge-work-plugins" target="_blank" rel="noopener noreferrer" style={{ color: "#F97316", fontWeight: 700, textDecoration: "none" }}>ดูข้อมูลเพิ่มเติม →</a>
             </Card>
-          </div>
           </div>
         </section>
 
