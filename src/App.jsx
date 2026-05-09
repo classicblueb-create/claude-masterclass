@@ -1103,7 +1103,7 @@ export default function App() {
           -webkit-text-fill-color: transparent;
           background-clip: text;
         }
-        .section-title { font-size: 36px; font-weight: 800; line-height: 1.2; letter-spacing: -0.5px; }
+        .section-title { font-size: 36px; font-weight: 800; line-height: 1.2; letter-spacing: -0.5px; color: var(--primary); }
         .hero-title { font-size: clamp(32px, 5vw, 56px); font-weight: 800; line-height: 1.15; letter-spacing: -1px; }
 
         /* Animations */
@@ -1200,12 +1200,14 @@ export default function App() {
       
       <div className="mobile-header">
         <div style={{ fontWeight: 800, fontSize: 16 }} className="text-gradient">Claude Masterclass</div>
-        <button onClick={() => setMenuOpen(true)} style={{ 
-          background: "white", border: "1px solid #E2E8F0", borderRadius: 8, 
-          width: 36, height: 36, display: "flex", alignItems: "center", justifyContent: "center",
-          boxShadow: "0 2px 4px rgba(0,0,0,0.05)", cursor: "pointer"
+        <button onClick={() => setMenuOpen(true)} style={{
+          background: "white", border: "1px solid #E2E8F0", borderRadius: 8,
+          padding: "6px 12px", display: "flex", alignItems: "center", gap: 6,
+          boxShadow: "0 2px 4px rgba(0,0,0,0.05)", cursor: "pointer",
+          fontSize: 13, fontWeight: 700, color: "#7C3AED", fontFamily: "inherit"
         }}>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          เมนู
         </button>
       </div>
 
